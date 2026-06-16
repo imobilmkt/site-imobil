@@ -715,6 +715,136 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   SOBRE / QUEM ESTÁ POR TRÁS
+═══════════════════════════════════════════════════════════════════ */
+.sobre {
+  padding: 140px 0;
+  position: relative;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ─── Portrait ─── */
+.sobre-photo {
+  position: relative;
+}
+
+.sobre-photo-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(240,239,244,0.08);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+  aspect-ratio: 4 / 5;
+}
+
+.sobre-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13,27,42,0) 45%, rgba(13,27,42,0.55) 100%);
+  pointer-events: none;
+}
+
+.sobre-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.7s var(--ease);
+}
+
+.sobre-photo:hover .sobre-photo-frame img { transform: scale(1.04); }
+
+.sobre-photo::before {
+  content: '';
+  position: absolute;
+  inset: -12% -12% -18% -12%;
+  background: radial-gradient(closest-side, rgba(108,63,197,0.35), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.sobre-photo-badge {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(13,27,42,0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(240,239,244,0.12);
+  border-radius: 14px;
+}
+
+.spb-num {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--purple);
+  line-height: 1;
+}
+
+.spb-text {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(240,239,244,0.8);
+}
+
+/* ─── Text ─── */
+.sobre-body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(240,239,244,0.6);
+  margin-top: 24px;
+  max-width: 540px;
+}
+.sobre-body strong { color: var(--white); font-weight: 600; }
+.sobre-text .section-title { margin-top: 8px; }
+
+/* ─── Mini gallery ─── */
+.sobre-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 40px;
+  max-width: 540px;
+}
+
+.sg-item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(240,239,244,0.08);
+}
+
+.sg-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.15) brightness(0.92);
+  transition: transform 0.6s var(--ease), filter 0.4s;
+}
+
+.sg-item:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0) brightness(1);
+}
+
+.sobre-cta { margin-top: 40px; }
+
+/* ═══════════════════════════════════════════════════════════════════
    CTA CENTRAL
 ═══════════════════════════════════════════════════════════════════ */
 .cta-section {
@@ -897,6 +1027,7 @@ img { max-width: 100%; display: block; }
   .diff-card.diff-large { grid-column: 1 / -1; }
   .hero-mark { display: none; }
   .cta-bg-mark { opacity: 0.05; }
+  .sobre-grid { gap: 48px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -956,6 +1087,11 @@ img { max-width: 100%; display: block; }
   .diff-grid { grid-template-columns: 1fr; }
   .diff-card.diff-large { grid-column: auto; }
   .diff-card { padding: 40px 28px; }
+
+  .sobre { padding: 80px 0; }
+  .sobre-grid { grid-template-columns: 1fr; gap: 44px; }
+  .sobre-photo-frame { max-width: 420px; margin: 0 auto; }
+  .sobre-body, .sobre-gallery { max-width: none; }
 
   .cta-section { padding: 80px 0; }
   .cta-headline { font-size: 36px; }
