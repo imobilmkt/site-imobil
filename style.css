@@ -319,9 +319,31 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(13,27,42,0.97) 0%, rgba(13,27,42,0.82) 40%, rgba(13,27,42,0.42) 100%),
+    linear-gradient(0deg, rgba(13,27,42,0.95) 0%, rgba(13,27,42,0.15) 45%, rgba(13,27,42,0.6) 100%);
+}
+
 .hero-canvas {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -386,19 +408,6 @@ img { max-width: 100%; display: block; }
   flex-wrap: wrap;
 }
 
-.hero-mark {
-  position: absolute;
-  right: 8%;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  opacity: 0.85;
-}
-.hero-logo-img {
-  width: 220px;
-  height: auto;
-}
-
 .hero-scroll-hint {
   position: absolute;
   bottom: 36px;
@@ -447,6 +456,28 @@ img { max-width: 100%; display: block; }
   top: 0; left: 0; right: 0; bottom: 0;
   background: radial-gradient(ellipse 60% 40% at 80% 50%, rgba(45,27,105,0.25) 0%, transparent 70%);
   pointer-events: none;
+  z-index: 1;
+}
+
+.problema-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.problema-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.16;
+  -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 65%);
+          mask-image: linear-gradient(90deg, transparent 8%, #000 65%);
+}
+
+.problema .container {
+  position: relative;
+  z-index: 2;
 }
 
 .problema-grid {
@@ -669,7 +700,7 @@ img { max-width: 100%; display: block; }
 
 .diff-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 2px;
   margin-top: 64px;
 }
@@ -712,6 +743,45 @@ img { max-width: 100%; display: block; }
   font-weight: 300;
   line-height: 1.85;
   color: rgba(240,239,244,0.5);
+}
+
+/* ─── Tile fotográfico ─── */
+.diff-photo {
+  padding: 0;
+  overflow: hidden;
+  min-height: 320px;
+}
+.diff-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 32%;
+  filter: grayscale(0.12) brightness(0.92);
+  transition: transform 0.7s var(--ease), filter 0.4s;
+}
+.diff-photo:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0) brightness(1);
+}
+.diff-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13,27,42,0) 40%, rgba(13,27,42,0.82) 100%);
+  pointer-events: none;
+}
+.diff-photo-caption {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 26px;
+  z-index: 1;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--white);
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -845,6 +915,67 @@ img { max-width: 100%; display: block; }
 .sobre-cta { margin-top: 40px; }
 
 /* ═══════════════════════════════════════════════════════════════════
+   VITRINE / FAIXA EMPREENDIMENTOS
+═══════════════════════════════════════════════════════════════════ */
+.vitrine {
+  position: relative;
+  min-height: clamp(440px, 72vh, 660px);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.vitrine-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.vitrine-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.vitrine-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.62) 42%, rgba(13,27,42,0.12) 100%),
+    linear-gradient(0deg, rgba(13,27,42,0.9) 0%, rgba(13,27,42,0) 55%),
+    linear-gradient(180deg, rgba(13,27,42,0.45) 0%, rgba(13,27,42,0) 30%);
+}
+
+.vitrine .container {
+  position: relative;
+  z-index: 2;
+}
+
+.vitrine-content {
+  max-width: 560px;
+  padding: 96px 0;
+}
+
+.vitrine-headline {
+  font-size: clamp(30px, 5vw, 60px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
+  color: var(--white);
+  margin: 20px 0 18px;
+}
+
+.vitrine-sub {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(240,239,244,0.72);
+  max-width: 460px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    CTA CENTRAL
 ═══════════════════════════════════════════════════════════════════ */
 .cta-section {
@@ -852,6 +983,29 @@ img { max-width: 100%; display: block; }
   padding: 140px 0;
   position: relative;
   overflow: hidden;
+}
+
+.cta-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.cta-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.28;
+  mix-blend-mode: soft-light;
+}
+.cta-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(108,63,197,0.2) 0%, rgba(108,63,197,0.55) 100%),
+    linear-gradient(0deg, rgba(45,27,105,0.45) 0%, rgba(108,63,197,0) 60%);
 }
 
 .cta-bg-mark {

@@ -1,1 +1,4 @@
 .DS_Store
+
+# Fotos originais em RAW (a web usa as versões .jpg otimizadas)
+img/*.DNG

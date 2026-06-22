@@ -56,6 +56,10 @@
 
   <!-- ═══════════════════════ HERO ═══════════════════════ -->
   <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="img/hero-predio.jpg" alt="" width="2200" height="1237">
+    </div>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-content">
       <div class="hero-eyebrow reveal">
@@ -77,9 +81,6 @@
         <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
       </div>
     </div>
-    <div class="hero-mark reveal reveal-delay-2">
-      <img src="img/logo-imobil.svg" alt="IMOBIL" class="hero-logo-img">
-    </div>
     <div class="hero-scroll-hint" aria-hidden="true">
       <span class="scroll-line"></span>
       <span class="scroll-label">Scroll</span>
@@ -92,7 +93,7 @@
       <div class="sobre-grid">
         <div class="sobre-photo reveal">
           <div class="sobre-photo-frame">
-            <img src="img/fundador.jpg" alt="Especialista da IMOBIL em frente a um empreendimento imobiliário" loading="lazy" width="1320" height="1600">
+            <img src="img/equipe-dupla.jpg" alt="Especialistas da IMOBIL em frente a um empreendimento imobiliário" loading="lazy" width="900" height="1600" style="object-position:center 32%">
           </div>
           <div class="sobre-photo-badge">
             <span class="spb-num">100%</span>
@@ -115,9 +116,9 @@
             É essa vivência que transforma anúncios em <strong>resultados reais</strong> para a sua imobiliária ou construtora.
           </p>
           <div class="sobre-gallery reveal reveal-delay-3">
-            <figure class="sg-item"><img src="img/presenca-1.jpg" alt="Visita a empreendimento imobiliário" loading="lazy" width="1320" height="1600"></figure>
-            <figure class="sg-item"><img src="img/presenca-2.jpg" alt="Presença em condomínio residencial" loading="lazy" width="1320" height="1600"></figure>
-            <figure class="sg-item"><img src="img/presenca-3.jpg" alt="Acompanhamento de obra em construção" loading="lazy" width="1320" height="1600"></figure>
+            <figure class="sg-item"><img src="img/equipe-campo.jpg" alt="Especialista da IMOBIL em visita a um empreendimento" loading="lazy" width="731" height="1300"></figure>
+            <figure class="sg-item"><img src="img/empreendimento-1.jpg" alt="Empreendimento residencial moderno" loading="lazy" width="1500" height="843"></figure>
+            <figure class="sg-item"><img src="img/empreendimento-2.jpg" alt="Vista de empreendimento imobiliário de alto padrão" loading="lazy" width="1500" height="843"></figure>
           </div>
           <div class="sobre-cta reveal reveal-delay-3">
             <a href="https://wa.me/5561995006618?text=Ol%C3%A1%2C%20vim%20pelo%20SITE%20da%20IMOBIL%20MKT%20e%20gostaria%20de%20entender%20como%20voc%C3%AAs%20podem%20ajudar%20minha%20imobili%C3%A1ria%20a%20atrair%20mais%20clientes." target="_blank" rel="noopener" class="btn btn-primary" onclick="gtag_report_conversion()">
@@ -131,6 +132,9 @@
 
   <!-- ═══════════════════════ PROBLEMA / SOLUÇÃO ═══════════════════════ -->
   <section class="problema" id="problema">
+    <div class="problema-media" aria-hidden="true">
+      <img src="img/problema-bg.jpg" alt="" loading="lazy" width="2000" height="1125">
+    </div>
     <div class="container">
       <div class="problema-grid">
         <div class="problema-left">
@@ -156,6 +160,28 @@
             </a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ VITRINE / FAIXA EMPREENDIMENTOS ═══════════════════════ -->
+  <section class="vitrine" id="vitrine" aria-label="Presença no mercado imobiliário">
+    <div class="vitrine-media">
+      <img src="img/vitrine-empreendimento.jpg" alt="Empreendimento imobiliário moderno acompanhado de perto pela IMOBIL" loading="lazy" width="2100" height="1181">
+    </div>
+    <div class="vitrine-overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="vitrine-content reveal">
+        <div class="section-label">
+          <span class="sl-bar"></span>
+          <span class="sl-text">No campo, com você</span>
+        </div>
+        <h2 class="vitrine-headline">
+          Do lançamento à<br><span class="accent-word">entrega das chaves</span>.
+        </h2>
+        <p class="vitrine-sub">
+          Conhecemos cada empreendimento de perto. É essa proximidade com o mercado que transforma anúncios em vendas reais.
+        </p>
       </div>
     </div>
   </section>
@@ -320,6 +346,10 @@
           <h3 class="diff-title">Especialização<br>total no setor</h3>
           <p class="diff-body">Não somos uma agência genérica. Cada estratégia é construída com base no profundo conhecimento do mercado imobiliário brasileiro — da linguagem ao funil de vendas.</p>
         </div>
+        <figure class="diff-card diff-photo reveal reveal-delay-1">
+          <img src="img/equipe-parque.jpg" alt="Especialistas da IMOBIL que cuidam da sua estratégia" loading="lazy" width="731" height="1300">
+          <figcaption class="diff-photo-caption">Quem cuida da sua estratégia, de perto.</figcaption>
+        </figure>
         <div class="diff-card reveal reveal-delay-1">
           <div class="diff-number">02</div>
           <h3 class="diff-title">Resultados<br>mensuráveis</h3>
@@ -336,6 +366,9 @@
 
   <!-- ═══════════════════════ CTA CENTRAL ═══════════════════════ -->
   <section class="cta-section" id="cta">
+    <div class="cta-media" aria-hidden="true">
+      <img src="img/cta-central-vendas.jpg" alt="" loading="lazy" width="2200" height="1237">
+    </div>
     <div class="cta-bg-mark" aria-hidden="true">
       <svg viewBox="0 0 220 220" width="220" height="220" opacity="0.08">
         <rect x="0"  y="156" width="60" height="60" fill="white" rx="4"/>
