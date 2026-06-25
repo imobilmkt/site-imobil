@@ -106,8 +106,8 @@
   const ctx = canvas.getContext('2d');
   let W, H, dots = [], raf;
 
-  const NAVY   = [13,  27,  42];
-  const PURPLE = [108, 63, 197];
+  const NAVY   = [19,  16,  11];
+  const PURPLE = [221, 192, 149];
 
   function resize() {
     W = canvas.width  = canvas.offsetWidth;
@@ -144,9 +144,9 @@
       const color = d.isPurple ? PURPLE : NAVY.map((v,i) => v + (240 - v) * 0.3);
 
       if (d.isPurple) {
-        ctx.fillStyle = `rgba(108,63,197,${Math.max(0, alpha * 2.5)})`;
+        ctx.fillStyle = `rgba(221,192,149,${Math.max(0, alpha * 2.5)})`;
       } else {
-        ctx.fillStyle = `rgba(240,239,244,${Math.max(0, alpha)})`;
+        ctx.fillStyle = `rgba(255,255,255,${Math.max(0, alpha)})`;
       }
 
       ctx.beginPath();
