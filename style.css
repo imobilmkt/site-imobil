@@ -451,6 +451,73 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   QUEM CONFIA NA IMOBIL
+═══════════════════════════════════════════════════════════════════ */
+.confia {
+  padding: 140px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.confia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  align-items: center;
+  gap: 40px;
+  margin-top: 64px;
+}
+
+.confia-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.confia-photo {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s var(--ease);
+}
+
+.confia-photo img {
+  height: 100%;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  transition: transform 0.4s var(--ease);
+}
+
+.confia-item:hover .confia-photo { transform: translateY(-4px); }
+
+.confia-photo--large { height: 170px; }
+
+.confia-photo--light {
+  box-sizing: border-box;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 10px 16px;
+}
+
+.confia-photo--rounded {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.confia-item:hover .confia-photo img { transform: scale(1.06); }
+
+.confia-handle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white-dim);
+  transition: color 0.2s;
+}
+
+.confia-item:hover .confia-handle { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════════════════════════
    PROBLEMA / SOLUÇÃO
 ═══════════════════════════════════════════════════════════════════ */
 .problema {
