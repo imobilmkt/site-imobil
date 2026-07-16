@@ -32,6 +32,11 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Compensa a navbar fixa em links diretos por âncora (ex.: /#clientes) */
+section[id] {
+  scroll-margin-top: var(--nav-h);
+}
+
 body {
   font-family: var(--font);
   background: var(--dark);
