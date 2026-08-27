@@ -229,6 +229,15 @@ function validateArticle(article, { citationUrls, existingSlugs }) {
     }
   }
 
+  if (article.bodyHtml) {
+    const inlineHrefs = [...article.bodyHtml.matchAll(/href\s*=\s*"([^"]*)"/gi)].map(m => m[1]);
+    for (const href of inlineHrefs) {
+      if (!citationUrls.has(href)) {
+        errors.push(`link inline no corpo do artigo não é uma URL de fonte real da pesquisa (possível URL inventada): ${href}`);
+      }
+    }
+  }
+
   if (errors.length) {
     throw new Error('Validação do artigo falhou:\n- ' + errors.join('\n- '));
   }
