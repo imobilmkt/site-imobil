@@ -19,16 +19,14 @@
   <meta property="og:url" content="https://www.imobilmkt.com.br/blog/" />
   <meta property="og:site_name" content="IMOBIL Marketing Imobiliário" />
   <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Blog | Marketing Imobiliário para Imobiliárias, Construtoras e Arquitetos | IMOBIL" />
-  <meta property="og:description" content="Artigos sobre marketing digital para o mercado imobiliário: geração de leads para corretores, lançamento de empreendimentos e presença online para arquitetos." />
+  <meta property="og:title" content="Blog | Marketing Imobiliário para Imobiliárias, Construtoras e Arquitetos" />
+  <meta property="og:description" content="Artigos sobre marketing digital para o mercado imobiliário: geração de leads para corretores, lançamento de empreendimentos para construtoras e presença online para arquitetos." />
   <meta property="og:image" content="https://www.imobilmkt.com.br/img/hero-predio.jpg" />
-  <meta property="og:image:width" content="2200" />
-  <meta property="og:image:height" content="1237" />
 
   <!-- ═══ Twitter Card ═══ -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Blog | Marketing Imobiliário | IMOBIL" />
-  <meta name="twitter:description" content="Artigos sobre marketing digital para imobiliárias, construtoras, corretores e arquitetos." />
+  <meta name="twitter:title" content="Blog | Marketing Imobiliário para Imobiliárias, Construtoras e Arquitetos" />
+  <meta name="twitter:description" content="Artigos sobre marketing digital para o mercado imobiliário: geração de leads para corretores, lançamento de empreendimentos para construtoras e presença online para arquitetos." />
   <meta name="twitter:image" content="https://www.imobilmkt.com.br/img/hero-predio.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,38 +47,56 @@
   <!-- ═══ Dados estruturados (Schema.org) ═══ -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://www.imobilmkt.com.br/#organization",
-        "name": "IMOBIL Marketing Imobiliário",
-        "url": "https://www.imobilmkt.com.br/",
-        "logo": "https://www.imobilmkt.com.br/img/logo-imobil.svg"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.imobilmkt.com.br/#organization",
+      "name": "IMOBIL Marketing Imobiliário",
+      "url": "https://www.imobilmkt.com.br/",
+      "logo": "https://www.imobilmkt.com.br/img/logo-imobil.svg"
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://www.imobilmkt.com.br/blog/#blog",
+      "url": "https://www.imobilmkt.com.br/blog/",
+      "name": "Blog IMOBIL — Marketing Imobiliário",
+      "description": "Artigos sobre marketing digital para o mercado imobiliário: geração de leads para corretores, lançamento de empreendimentos para construtoras e presença online para arquitetos.",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.imobilmkt.com.br/#organization"
       },
-      {
-        "@type": "Blog",
-        "@id": "https://www.imobilmkt.com.br/blog/#blog",
-        "url": "https://www.imobilmkt.com.br/blog/",
-        "name": "Blog IMOBIL — Marketing Imobiliário",
-        "description": "Artigos sobre marketing digital para imobiliárias, construtoras, incorporadoras, corretores de imóveis e escritórios de arquitetura.",
-        "inLanguage": "pt-BR",
-        "publisher": { "@id": "https://www.imobilmkt.com.br/#organization" },
-        "blogPost": [
-          { "@id": "https://www.imobilmkt.com.br/blog/site-proprio-ou-portal-corretor-de-imoveis/#article" },
-          { "@id": "https://www.imobilmkt.com.br/blog/marketing-digital-lancamento-imobiliario/#article" },
-          { "@id": "https://www.imobilmkt.com.br/blog/portfolio-online-arquitetos-que-gera-clientes/#article" }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://www.imobilmkt.com.br/" },
-          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.imobilmkt.com.br/blog/" }
-        ]
-      }
-    ]
-  }
+      "blogPost": [
+        {
+          "@id": "https://www.imobilmkt.com.br/blog/site-proprio-ou-portal-corretor-de-imoveis/#article"
+        },
+        {
+          "@id": "https://www.imobilmkt.com.br/blog/marketing-digital-lancamento-imobiliario/#article"
+        },
+        {
+          "@id": "https://www.imobilmkt.com.br/blog/portfolio-online-arquitetos-que-gera-clientes/#article"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.imobilmkt.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.imobilmkt.com.br/blog/"
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -147,7 +163,6 @@
   <!-- ═══════════════════════ GRID DE POSTS ═══════════════════════ -->
   <section class="container">
     <div class="blog-grid">
-
       <a href="/blog/site-proprio-ou-portal-corretor-de-imoveis/" class="post-card reveal">
         <div class="post-card-img">
           <img src="/img/presenca-2.jpg" alt="Corretor de imóveis analisando resultados de marketing digital" loading="lazy" width="800" height="500">
@@ -155,11 +170,10 @@
         <div class="post-card-body">
           <span class="post-tag">Corretores</span>
           <h2 class="post-card-title">Site próprio ou só portal? O que realmente gera mais leads para corretor de imóveis</h2>
-          <p class="post-card-desc">Por que depender só de Zap/VivaReal limita seus resultados — e o que muda quando você tem presença digital própria.</p>
+          <p class="post-card-desc">Depender só de Zap Imóveis ou VivaReal limita seus resultados como corretor. Entenda o que muda quando você tem site próprio e tráfego pago segmentado gerando leads qualificados.</p>
           <span class="post-card-arrow">Ler artigo <span class="btn-arrow">→</span></span>
         </div>
       </a>
-
       <a href="/blog/marketing-digital-lancamento-imobiliario/" class="post-card reveal reveal-delay-1">
         <div class="post-card-img">
           <img src="/img/vitrine-empreendimento.jpg" alt="Empreendimento imobiliário em fase de lançamento" loading="lazy" width="800" height="500">
@@ -167,11 +181,10 @@
         <div class="post-card-body">
           <span class="post-tag">Construtoras</span>
           <h2 class="post-card-title">Marketing digital para lançamento imobiliário: como estruturar o funil do pré-lançamento à entrega</h2>
-          <p class="post-card-desc">As três fases de um lançamento bem-sucedido e os erros mais comuns que fazem construtoras perderem leads qualificados.</p>
+          <p class="post-card-desc">Como estruturar o marketing digital de um lançamento imobiliário do pré-lançamento à entrega das chaves: fases do funil, landing page de conversão e erros que fazem construtoras perderem leads.</p>
           <span class="post-card-arrow">Ler artigo <span class="btn-arrow">→</span></span>
         </div>
       </a>
-
       <a href="/blog/portfolio-online-arquitetos-que-gera-clientes/" class="post-card reveal reveal-delay-2">
         <div class="post-card-img">
           <img src="/img/empreendimento-2.jpg" alt="Projeto de arquitetura residencial de alto padrão" loading="lazy" width="800" height="500">
@@ -179,11 +192,10 @@
         <div class="post-card-body">
           <span class="post-tag">Arquitetos</span>
           <h2 class="post-card-title">Portfólio online que gera clientes: o que todo escritório de arquitetura precisa além do Instagram</h2>
-          <p class="post-card-desc">Por que o Instagram sozinho não converte visitante em cliente — e como estruturar presença digital que capta projetos.</p>
+          <p class="post-card-desc">Por que o Instagram sozinho não converte visitante em cliente para escritórios de arquitetura, e como estruturar um site/portfólio que gera contatos qualificados e aparece no Google.</p>
           <span class="post-card-arrow">Ler artigo <span class="btn-arrow">→</span></span>
         </div>
       </a>
-
     </div>
   </section>
 

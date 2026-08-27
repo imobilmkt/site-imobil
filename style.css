@@ -1631,6 +1631,18 @@ img { max-width: 100%; display: block; }
 
 .article-body strong { color: var(--white); font-weight: 700; }
 
+.article-body a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(221,192,149,0.4);
+  transition: text-decoration-color 0.2s;
+}
+.article-body a:hover { text-decoration-color: var(--gold); }
+
+.article-sources li { padding-left: 26px; }
+.article-sources li::before { top: 9px; }
+
 .article-body ul {
   margin: 0 0 24px;
   display: flex;
