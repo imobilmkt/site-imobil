@@ -49,6 +49,9 @@
     gtag('config', 'AW-18193501352');
   </script>
 
+  <!-- OpenAI Ads Pixel -->
+  <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"Fo6hRUuvLHLx8oYNSP3ypa"});</script>
+
   <!-- ═══ Dados estruturados (Schema.org) ═══ -->
   <script type="application/ld+json">
   {
@@ -726,6 +729,13 @@
         'currency': 'BRL',
         'transport_type': 'beacon'
       });
+      if (window.oaiq) {
+        oaiq('measure', 'registration_completed', {
+          type: 'customer_action',
+          amount: 0,
+          currency: 'USD'
+        });
+      }
       return true;
     }
   </script>
