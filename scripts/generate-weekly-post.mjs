@@ -184,11 +184,15 @@ Responda chamando a ferramenta publish_article.`;
 
   const data = await callAnthropic({
     model: MODEL,
-    max_tokens: 8000,
+    max_tokens: 16000,
     tools: [publishArticleToolSchema()],
     tool_choice: { type: 'tool', name: 'publish_article' },
     messages: [{ role: 'user', content: prompt }],
   });
+
+  if (data.stop_reason === 'max_tokens') {
+    throw new Error('A resposta foi cortada por atingir max_tokens antes de terminar o artigo. Aumente max_tokens em writeArticle().');
+  }
 
   const toolUse = data.content.find(b => b.type === 'tool_use' && b.name === 'publish_article');
   if (!toolUse) throw new Error('A resposta não incluiu a chamada da ferramenta publish_article.');
