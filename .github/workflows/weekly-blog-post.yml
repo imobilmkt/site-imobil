@@ -2,8 +2,10 @@ name: Publicar post semanal no blog
 
 on:
   schedule:
-    # Toda segunda-feira às 10:00 (horário de Brasília, UTC-3) = 13:00 UTC
-    - cron: '0 13 * * 1'
+    # Toda segunda-feira às ~10:07 (horário de Brasília, UTC-3) = 13:07 UTC
+    # (evita o minuto cheio, que o GitHub avisa ter mais chance de ser
+    # descartado silenciosamente em picos de carga)
+    - cron: '7 13 * * 1'
   workflow_dispatch: {} # permite rodar manualmente em Actions > Run workflow
 
 permissions:
