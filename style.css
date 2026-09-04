@@ -1210,8 +1210,8 @@ img { max-width: 100%; display: block; }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 1.3fr 0.85fr 0.95fr 0.85fr;
+  gap: 48px;
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -1246,6 +1246,7 @@ img { max-width: 100%; display: block; }
 }
 
 .footer-nav ul,
+.footer-locations ul,
 .footer-contact ul { display: flex; flex-direction: column; gap: 12px; }
 
 .footer-nav a,
@@ -1260,6 +1261,12 @@ img { max-width: 100%; display: block; }
 }
 .footer-nav a:hover,
 .footer-contact a:hover { color: var(--white); }
+
+.footer-locations li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+}
 
 .footer-bottom {
   padding-top: 32px;
