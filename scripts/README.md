@@ -1,3 +1,34 @@
+# Home / páginas por público — `build-pages.mjs`
+
+O site tem 3 versões da home, todas com o mesmo design e seções, mas com
+hero e SEO diferentes por público:
+
+- `index.html` — home genérica (corretores + imobiliárias + construtoras)
+- `corretores/index.html` — foco em corretor de imóveis autônomo
+- `imobiliarias/index.html` — foco em imobiliária/construtora
+
+As 3 são **geradas**, não editadas à mão. A fonte da verdade é:
+
+- `templates/page.template.html` — o HTML completo do site, com
+  `__PLACEHOLDERS__` no lugar do hero, da seção "Problema" e das tags de SEO
+  (title, meta description, OG, Twitter, JSON-LD). Qualquer mudança em nav,
+  serviços, FAQ, footer etc. deve ser feita **aqui**.
+- `lib/pages-data.mjs` — o texto de cada placeholder, uma entrada por página
+  (home / corretores / imobiliarias).
+
+Depois de editar qualquer um dos dois, rode:
+
+```bash
+node scripts/build-pages.mjs
+```
+
+Isso regrava `index.html`, `corretores/index.html`, `imobiliarias/index.html`
+e o bloco `HOME PAGES` em `sitemap.xml` (canonical de cada página, para não
+gerar aviso de conteúdo duplicado no Search Console). Revise com `git diff`
+antes de dar commit/push.
+
+---
+
 # Blog automatizado — geração semanal de posts
 
 Toda segunda-feira (13:00 UTC / 10:00 em Brasília), o workflow
