@@ -16,18 +16,17 @@ export const pages = [
     twitterTitle: 'Marketing para Corretores de Imóveis, Imobiliárias e Construtoras | IMOBIL',
     twitterDescription: 'Agência de marketing digital 100% focada no mercado imobiliário. Tráfego pago, branding e conteúdo que geram leads e vendas de imóveis para corretores e negócios imobiliários.',
 
-    heroEyebrow: 'Marketing para corretores de imóveis, imobiliárias e construtoras',
-    heroH1: `Tráfego pago<br>
-        para <span class="accent-word">Corretores</span>.<br>
-        <span class="accent-word">Marketing Imobiliário</span>.`,
-    heroSub: 'Marketing digital que move o mercado imobiliário: tráfego pago, branding e conteúdo para corretores de imóveis, imobiliárias, construtoras e arquitetos.',
+    heroEyebrow: 'Marketing digital para todo o mercado imobiliário',
+    heroH1: `O marketing que<br>
+        move todo o <span class="accent-word">mercado imobiliário</span>.`,
+    heroSub: 'Tráfego pago, branding e conteúdo para corretores de imóveis, imobiliárias, construtoras, incorporadoras e arquitetos venderem e alugarem mais, em todo o Brasil.',
 
-    problemaHeadline: 'Você, corretor,<br>está <span class="accent-line">invisível</span><br>no digital?',
+    problemaHeadline: 'Seu negócio imobiliário<br>está <span class="accent-line">invisível</span><br>no digital?',
     problemaBody: `<p class="problema-body reveal reveal-delay-1">
-            Enquanto outros corretores dominam o Google, o Instagram e o YouTube, seus imóveis ficam esperando por compradores que nunca chegam pelo canal certo.
+            Enquanto concorrentes dominam o Google, o Instagram e o YouTube, seus imóveis e lançamentos ficam esperando por compradores que nunca chegam pelo canal certo.
           </p>
           <p class="problema-body reveal reveal-delay-2">
-            O mercado imobiliário é um dos mais competitivos do Brasil — e a diferença entre fechar ou perder uma comissão de um negócio de R$500 mil está na <strong>estratégia digital que você ainda não tem.</strong>
+            O mercado imobiliário é um dos mais competitivos do Brasil — e a diferença entre fechar ou perder negócios de centenas de milhares de reais está na <strong>estratégia digital que seu negócio ainda não tem.</strong>
           </p>`,
   },
 
