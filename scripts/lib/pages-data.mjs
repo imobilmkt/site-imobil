@@ -72,7 +72,7 @@ export const pages = [
     twitterTitle: 'Marketing Digital para Imobiliárias e Construtoras | IMOBIL',
     twitterDescription: 'Tráfego pago, branding e conteúdo para sua imobiliária gerar leads em escala para todo o time de corretores.',
 
-    heroEyebrow: 'Marketing digital para imobiliárias e construtoras',
+    heroEyebrow: 'Marketing para Imobiliárias',
     heroH1: `Leads em escala<br>
         para <span class="accent-word">toda</span><br>
         a sua <span class="accent-word">equipe</span>.`,
