@@ -5,6 +5,12 @@
 const WHATSAPP_HREF =
   'https://wa.me/556195006618?text=Ol%C3%A1!%20Quero%20agendar%20uma%20reuni%C3%A3o%20para%20descobrir%20como%20atrair%20mais%20clientes%20com%20marketing%20digital%20imobili%C3%A1rio.';
 
+const WHATSAPP_DIAGNOSTIC_HREF =
+  'https://wa.me/556195006618?text=' +
+  encodeURIComponent(
+    'Olá! Li um artigo no blog da IMOBIL e quero solicitar um diagnóstico gratuito da presença digital da minha imobiliária.'
+  );
+
 const WHATSAPP_ICON_SVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>`;
@@ -110,6 +116,41 @@ function cursorAndWhatsappBlock() {
     ${WHATSAPP_ICON_SVG}
     <span class="wf-pulse"></span>
   </a>`;
+}
+
+function inlineDiagnosticCtaHtml() {
+  return `
+      <div class="article-inline-cta reveal">
+        <span class="aic-eyebrow">Diagnóstico gratuito</span>
+        <p>Quer saber quais oportunidades sua imobiliária está perdendo no digital? Mande uma mensagem e receba um diagnóstico gratuito da sua presença online.</p>
+        <a href="${WHATSAPP_DIAGNOSTIC_HREF}" target="_blank" rel="noopener" class="btn btn-primary" onclick="gtag_report_conversion()">
+          Quero meu diagnóstico grátis <span class="btn-arrow">→</span>
+        </a>
+      </div>
+`;
+}
+
+/**
+ * Insere um trecho de HTML (ex.: a caixa de CTA de diagnóstico) no meio do
+ * corpo do artigo, logo antes de um <h2> próximo da metade — assim o CTA
+ * fica dentro do conteúdo, entre duas seções, em vez de só no topo/rodapé.
+ * Se o artigo tiver menos de 2 <h2>, insere no final do corpo (antes do
+ * CTA de fechamento).
+ * @param {string} bodyHtml
+ * @param {string} ctaHtml
+ */
+export function insertMidArticleCta(bodyHtml, ctaHtml) {
+  const h2Regex = /<h2[\s>]/gi;
+  const positions = [];
+  let m;
+  while ((m = h2Regex.exec(bodyHtml))) positions.push(m.index);
+
+  if (positions.length < 2) {
+    return bodyHtml + ctaHtml;
+  }
+
+  const targetIndex = positions[Math.floor(positions.length / 2)];
+  return bodyHtml.slice(0, targetIndex) + ctaHtml + bodyHtml.slice(targetIndex);
 }
 
 function footerBlock() {
@@ -268,6 +309,7 @@ export function renderPostHtml(p) {
 
   const prevPost = p.otherPosts?.[0];
   const nextPost = p.otherPosts?.[1];
+  const bodyHtmlWithCta = insertMidArticleCta(p.bodyHtml, inlineDiagnosticCtaHtml());
 
   return `<!DOCTYPE html>
 <html lang="pt-BR">
@@ -305,7 +347,7 @@ ${headBlock({ title: p.title, description: p.metaDescription, canonicalUrl, ogIm
   <section class="container">
     <article class="article-body">
 
-      ${p.bodyHtml}
+      ${bodyHtmlWithCta}
 
       <div class="article-cta-box reveal">
         <p>Quer aplicar isso no marketing digital da sua imobiliária, construtora ou escritório?</p>

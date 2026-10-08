@@ -31,6 +31,20 @@ antes de dar commit/push.
 
 # Blog automatizado — geração semanal de posts
 
+Linha editorial: todo artigo é um conteúdo de **boas práticas de marketing
+digital para imobiliárias e corretores** — a notícia/dado real é só o gancho,
+o foco é sempre "o que fazer agora no digital" (site, SEO local, anúncios,
+redes sociais, CRM/atendimento de leads, WhatsApp etc.), não um resumo de
+notícia. Essa instrução está no prompt de `writeArticle()` em
+`generate-weekly-post.mjs`.
+
+Todo post (novo ou já publicado) tem dois CTAs para WhatsApp dentro do corpo:
+um `.article-inline-cta` ("Diagnóstico gratuito") inserido automaticamente
+no meio do artigo — por `insertMidArticleCta()` em `lib/post-template.mjs`,
+antes de um `<h2>` perto da metade — e o `.article-cta-box` ("Falar com um
+especialista") de sempre, no fim do corpo. Não peça para a IA incluir CTA no
+`bodyHtml`; os dois são adicionados depois, pelo template.
+
 Toda segunda-feira (13:00 UTC / 10:00 em Brasília), o workflow
 `.github/workflows/weekly-blog-post.yml` roda sozinho e:
 

@@ -124,7 +124,8 @@ function publishArticleToolSchema() {
           description:
             'Corpo do artigo em HTML semântico usando SOMENTE as tags <h2>, <h3>, <p>, <ul>, <li>, <strong>, <a>. ' +
             'NÃO inclua <script>, <style>, atributos on*, nem javascript: em hrefs. ' +
-            'NÃO inclua H1 (o título já vira H1 automaticamente), nem seção de FAQ, CTA ou "Fontes" (isso é adicionado automaticamente depois do corpo). ' +
+            'NÃO inclua H1 (o título já vira H1 automaticamente), nem seção de FAQ, CTA ou "Fontes" (isso é adicionado automaticamente: um CTA de diagnóstico gratuito é inserido no meio do corpo, entre duas seções, e outro CTA de fechamento vai depois do corpo). ' +
+            'Use pelo menos 3 seções com <h2>, para que o CTA do meio caia entre seções e não interrompa um parágrafo. ' +
             'Sempre que usar um dado/fato vindo de uma fonte pesquisada, cite inline com <a href="URL_EXATA_DA_FONTE" target="_blank" rel="noopener">texto</a>, usando a URL exatamente como veio da pesquisa.',
         },
         faq: {
@@ -162,9 +163,11 @@ function publishArticleToolSchema() {
 async function writeArticle({ researchText, citations, existingTitles }) {
   const citationsList = citations.map((c, i) => `${i + 1}. ${c.title} — ${c.url}`).join('\n');
 
-  const prompt = `Você escreve para o blog da IMOBIL, agência de marketing digital 100% especializada no mercado imobiliário brasileiro (site: imobilmkt.com.br). O público do blog é profissional: corretores de imóveis, construtoras, incorporadoras e escritórios de arquitetura — NÃO é o comprador final de imóvel.
+  const prompt = `Você escreve para o blog da IMOBIL, agência de marketing digital 100% especializada no mercado imobiliário brasileiro (site: imobilmkt.com.br). O público do blog é profissional: corretores de imóveis, imobiliárias, construtoras, incorporadoras e escritórios de arquitetura — NÃO é o comprador final de imóvel.
 
 Tom: direto, confiante, orientado a benefício prático, sem enrolação, em português do Brasil.
+
+Linha editorial (IMPORTANTE): todo artigo é, no fundo, um conteúdo de BOAS PRÁTICAS DE MARKETING DIGITAL PARA IMOBILIÁRIAS E CORRETORES — a notícia/dado real é só o gancho. Não escreva um resumo de notícia; use a notícia para chegar rápido a recomendações práticas e aplicáveis sobre presença digital: site, SEO local, anúncios, redes sociais, CRM/atendimento de leads, portfólio online, WhatsApp, automação de atendimento, etc. Cada artigo deve deixar claro "o que fazer agora" no digital, não só "o que aconteceu".
 
 Aqui está o resultado de uma pesquisa real feita agora (${todayISO()}):
 
@@ -175,7 +178,7 @@ ${researchText}
 Fontes disponíveis (use SOMENTE estas URLs, copiadas exatamente, para qualquer citação — nunca invente uma URL nova):
 ${citationsList}
 
-Escreva UM artigo novo para o blog, conectando essa(s) notícia(s)/dado(s) real(is) a uma implicação prática para corretores, construtoras/incorporadoras OU arquitetos (escolha o ângulo mais forte — não precisa forçar os três). O artigo deve ensinar algo concreto, não ser só um resumo de notícia.
+Escreva UM artigo novo para o blog, conectando essa(s) notícia(s)/dado(s) real(is) a boas práticas de marketing digital para imobiliárias, corretores, construtoras/incorporadoras OU arquitetos (escolha o ângulo mais forte — não precisa forçar todos). O artigo deve ensinar algo concreto e acionável sobre como atuar no digital, não ser só um resumo de notícia.
 
 Não repita temas já cobertos:
 ${existingTitles.map(t => `- ${t}`).join('\n') || '(nenhum ainda)'}
