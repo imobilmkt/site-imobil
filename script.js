@@ -317,3 +317,30 @@
 
   sections.forEach(s => observer.observe(s));
 })();
+
+
+/* ─────────────────────────────────────────
+   9. GA4 — clique no WhatsApp (página + posição do botão)
+───────────────────────────────────────── */
+(function initWhatsappTracking() {
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[href*="wa.me"]');
+    if (!link || typeof gtag !== 'function') return;
+
+    let posicao;
+    if (link.closest('.whatsapp-float')) posicao = 'botao_flutuante';
+    else if (link.closest('nav')) posicao = 'menu';
+    else if (link.closest('footer')) posicao = 'rodape';
+    else {
+      const section = link.closest('section[id]');
+      posicao = section ? section.id : 'outro';
+    }
+
+    gtag('event', 'clique_whatsapp', {
+      pagina: location.pathname,
+      posicao: posicao,
+      texto_botao: (link.textContent || '').trim().slice(0, 100),
+      transport_type: 'beacon'
+    });
+  });
+})();
