@@ -30,6 +30,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Compensa a navbar fixa em links diretos por âncora (ex.: /#clientes) */
@@ -477,6 +478,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 14px;
   text-align: center;
+  min-width: 0;
 }
 
 .confia-photo {
@@ -490,7 +492,7 @@ img { max-width: 100%; display: block; }
 .confia-photo img {
   height: 100%;
   width: auto;
-  max-width: 250px;
+  max-width: min(250px, 100%);
   object-fit: contain;
   transition: transform 0.4s var(--ease);
 }
