@@ -166,10 +166,26 @@
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       cancelAnimationFrame(raf);
-    } else {
+    } else if (!raf) {
       raf = requestAnimationFrame(draw);
     }
   });
+
+  // Pause when the hero itself scrolls out of view — avoids burning
+  // CPU/GPU on an animation nobody sees, which on weaker phones was
+  // starving the main thread and making other animations (ex.: o anel
+  // do botão de WhatsApp) parecerem piscar/engasgar.
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !document.hidden) {
+        if (!raf) raf = requestAnimationFrame(draw);
+      } else {
+        cancelAnimationFrame(raf);
+        raf = null;
+      }
+    });
+  });
+  io.observe(canvas);
 })();
 
 
