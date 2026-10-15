@@ -1309,6 +1309,7 @@ img { max-width: 100%; display: block; }
   color: var(--gold);
   box-shadow: 0 8px 32px rgba(221,192,149,0.25);
   transition: transform 0.3s var(--ease), box-shadow 0.3s;
+  transform: translateZ(0);
 }
 
 .whatsapp-float:hover {
@@ -1321,12 +1322,15 @@ img { max-width: 100%; display: block; }
   inset: 0;
   border-radius: 50%;
   background: var(--gold);
-  animation: wf-pulse 2.5s ease infinite;
+  animation: wf-pulse 3.5s ease-out infinite;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
   z-index: -1;
 }
 
 @keyframes wf-pulse {
-  0%   { transform: scale(1);   opacity: 0.7; }
+  0%   { transform: scale(1);   opacity: 0.6; }
   100% { transform: scale(1.8); opacity: 0; }
 }
 
