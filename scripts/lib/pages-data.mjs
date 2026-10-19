@@ -10,11 +10,11 @@ export const pages = [
     navLabel: 'Página inicial',
 
     title: 'Marketing para Corretores de Imóveis, Imobiliárias e Construtoras | IMOBIL',
-    metaDescription: 'Agência de marketing digital especializada em corretores de imóveis, imobiliárias, construtoras e arquitetos. Tráfego pago, branding, conteúdo e landing pages que geram leads e vendas de imóveis em todo o Brasil.',
+    metaDescription: 'Agência especializada em marketing digital para corretores de imóveis, imobiliárias e construtoras que querem vender mais, em todo o Brasil.',
     ogTitle: 'Marketing para Corretores de Imóveis, Imobiliárias e Construtoras | IMOBIL',
-    ogDescription: 'Agência de marketing digital 100% focada no mercado imobiliário. Tráfego pago, branding e conteúdo que transformam anúncios em vendas de imóveis para corretores autônomos e negócios imobiliários.',
+    ogDescription: 'Marketing digital especializado em corretores, imobiliárias e construtoras que querem vender mais.',
     twitterTitle: 'Marketing para Corretores de Imóveis, Imobiliárias e Construtoras | IMOBIL',
-    twitterDescription: 'Agência de marketing digital 100% focada no mercado imobiliário. Tráfego pago, branding e conteúdo que geram leads e vendas de imóveis para corretores e negócios imobiliários.',
+    twitterDescription: 'Marketing digital especializado em corretores, imobiliárias e construtoras que querem vender mais.',
 
     heroEyebrow: 'Marketing digital para todo o mercado imobiliário',
     heroH1: `O marketing que<br>
