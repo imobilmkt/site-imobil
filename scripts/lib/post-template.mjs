@@ -262,7 +262,7 @@ export function renderPostHtml(p) {
         '@id': 'https://www.imobilmkt.com.br/#organization',
         name: 'IMOBIL Marketing Imobiliário',
         url: 'https://www.imobilmkt.com.br/',
-        logo: 'https://www.imobilmkt.com.br/img/logo-imobil.svg',
+        logo: 'https://www.imobilmkt.com.br/img/logo-imobil-vertical.png',
       },
       {
         '@type': 'BlogPosting',
@@ -401,7 +401,7 @@ export function renderBlogIndexHtml(posts) {
         '@id': 'https://www.imobilmkt.com.br/#organization',
         name: 'IMOBIL Marketing Imobiliário',
         url: 'https://www.imobilmkt.com.br/',
-        logo: 'https://www.imobilmkt.com.br/img/logo-imobil.svg',
+        logo: 'https://www.imobilmkt.com.br/img/logo-imobil-vertical.png',
       },
       {
         '@type': 'Blog',
