@@ -512,6 +512,8 @@ img { max-width: 100%; display: block; }
   gap: 14px;
   text-align: center;
   min-width: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
 .confia-photo {
@@ -1812,4 +1814,94 @@ img { max-width: 100%; display: block; }
   .article-hero { padding: 140px 0 0; }
   .article-body { padding: 40px 0 24px; }
   .article-cta-box { padding: 28px 20px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   CASES — página de case de cliente
+═══════════════════════════════════════════════════════════════════ */
+.case-logo-wrap {
+  margin-top: 40px;
+  height: 160px;
+  border-radius: var(--radius);
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.case-logo-wrap img {
+  max-width: 220px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.case-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+.case-step {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+  padding: 18px 20px !important;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius);
+}
+
+.case-step::before { content: none !important; }
+
+.case-step p { padding-left: 0; }
+
+.case-step-num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(221,192,149,0.12);
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-step h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.case-step p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--white-dim);
+  margin: 0;
+}
+
+.case-card-logo {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(255,255,255,0.03);
+}
+
+.case-card-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }

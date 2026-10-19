@@ -139,7 +139,10 @@
         "@id": "https://www.imobilmkt.com.br/#founder-jose-daniel-meireles",
         "name": "José Daniel Meireles",
         "jobTitle": "Fundador",
-        "worksFor": { "@id": "https://www.imobilmkt.com.br/#organization" }
+        "worksFor": { "@id": "https://www.imobilmkt.com.br/#organization" },
+        "sameAs": [
+          "https://www.linkedin.com/in/jos%C3%A9-daniel-371266445/"
+        ]
       },
       {
         "@type": "WebSite",
@@ -199,6 +202,7 @@
         <li><a href="#servicos" class="nav-link">Serviços</a></li>
         <li><a href="#resultados" class="nav-link">Resultados</a></li>
         <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+        <li><a href="/cases/" class="nav-link">Cases</a></li>
         <li><a href="/blog/" class="nav-link">Blog</a></li>
       </ul>
       <a href="https://wa.me/556195006618?text=Ol%C3%A1!%20Quero%20agendar%20uma%20reuni%C3%A3o%20para%20descobrir%20como%20atrair%20mais%20clientes%20com%20marketing%20digital%20imobili%C3%A1rio." target="_blank" rel="noopener" class="btn btn-nav" onclick="gtag_report_conversion()">Falar agora</a>
@@ -315,63 +319,60 @@
         </a>
       </div>
       <div class="confia-grid">
-        <!-- Cada item abaixo é um cliente. Para adicionar um novo:
+        <!-- Cada item abaixo é um cliente, linkado para o case completo em /cases/. Para adicionar um novo:
              1) coloque a logo (PNG) em img/clientes/
-             2) duplique um bloco <div class="confia-item">...</div> abaixo
-             3) troque o src pela logo
-             4) quando tiver o @ do Instagram do cliente, troque a <div> por
-                <a class="confia-item" href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener">
-                e adicione <span class="confia-handle">@usuario</span> antes do fechamento -->
-        <div class="confia-item reveal">
+             2) duplique um bloco <a class="confia-item">...</a> abaixo
+             3) troque o src pela logo e o href pelo slug do case em /cases/ -->
+        <a class="confia-item reveal" href="/cases/fabio-oliveira/">
           <div class="confia-photo">
             <img src="/img/clientes/Logo%20Fabio%20Oliveira.PNG" alt="Fabio Oliveira" loading="lazy" width="200" height="166">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-1">
+        </a>
+        <a class="confia-item reveal reveal-delay-1" href="/cases/barra-imobiliaria/">
           <div class="confia-photo">
             <img src="/img/clientes/logo%20barra%20imobiliaria.png" alt="Barra Imobiliária" loading="lazy" width="200" height="133">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-2">
+        </a>
+        <a class="confia-item reveal reveal-delay-2" href="/cases/seja-construtora/">
           <div class="confia-photo confia-photo--light">
             <img src="/img/clientes/Logo%20seja.png" alt="Seja Construtora" loading="lazy" width="200" height="62">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-3">
+        </a>
+        <a class="confia-item reveal reveal-delay-3" href="/cases/imobiliaria-leo-souza/">
           <div class="confia-photo confia-photo--rounded">
             <img src="/img/clientes/Leo%20Souza%20Imobili%C3%A1ria.png" alt="Leo Souza Imobiliária" loading="lazy" width="200" height="97">
           </div>
-        </div>
-        <div class="confia-item reveal">
+        </a>
+        <a class="confia-item reveal" href="/cases/studio-acmatos/">
           <div class="confia-photo confia-photo--rounded">
             <img src="/img/clientes/studio%20ac%20matos.jpg" alt="AC Matos Studio" loading="lazy" width="200" height="200">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-1">
+        </a>
+        <a class="confia-item reveal reveal-delay-1" href="/cases/modulazzi/">
           <div class="confia-photo">
             <img src="/img/clientes/logo%20modulazzi.webp" alt="Modulazzi" loading="lazy" width="152" height="200">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-2">
+        </a>
+        <a class="confia-item reveal reveal-delay-2" href="/cases/arthion-reformas/">
           <div class="confia-photo">
             <img src="/img/clientes/%5BArthion%5D%20logo%20RGB-52.png" alt="Arthion Arte e Formas" loading="lazy" width="200" height="93">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-3">
+        </a>
+        <a class="confia-item reveal reveal-delay-3" href="/cases/felipe-ramalho/">
           <div class="confia-photo confia-photo--light">
             <img src="/img/clientes/logo%20felipe%20ramalho.svg" alt="Felipe Ramalho Corretor" loading="lazy" width="200" height="200">
           </div>
-        </div>
-        <div class="confia-item reveal">
+        </a>
+        <a class="confia-item reveal" href="/cases/kubi-imoveis/">
           <div class="confia-photo">
             <img src="/img/clientes/logo%20kubi%20imoveis.png" alt="Kubi Imóveis" loading="lazy" width="200" height="60">
           </div>
-        </div>
-        <div class="confia-item reveal reveal-delay-1">
+        </a>
+        <a class="confia-item reveal reveal-delay-1" href="/cases/grupo-alves-imoveis/">
           <div class="confia-photo confia-photo--rounded">
             <img src="/img/clientes/logo%20grupo%20alves%20imoveis.jpeg" alt="Grupo Alves Imóveis" loading="lazy" width="200" height="193">
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -763,6 +764,7 @@
             <li><a href="#resultados">Resultados</a></li>
             <li><a href="#diferenciais">Diferenciais</a></li>
             <li><a href="#faq">Perguntas frequentes</a></li>
+            <li><a href="/cases/">Cases</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/">Página inicial</a></li>
             <li><a href="/corretores/">Para corretores</a></li>

@@ -42,6 +42,24 @@ Artigos sobre marketing digital para o mercado imobiliário, publicados em https
 - [Portfólio online que gera clientes: o que todo escritório de arquitetura precisa além do Instagram?](https://www.imobilmkt.com.br/blog/portfolio-online-arquitetos-que-gera-clientes/) — Por que o Instagram sozinho não converte visitante em cliente para escritórios de arquitetura, e como estruturar um site/portfólio que gera contatos qualificados e aparece no Google.
 <!-- BLOG:END -->
 
+
+## Cases de sucesso
+
+Clientes reais do mercado imobiliário atendidos pela IMOBIL, publicados em https://www.imobilmkt.com.br/cases/:
+
+<!-- CASES:START (gerado automaticamente por scripts/build-cases.mjs — não editar à mão) -->
+- [Fabio Oliveira](https://www.imobilmkt.com.br/cases/fabio-oliveira/) — Corretor autônomo, Brasília (DF) e Goiás. Corretor autônomo especialista em imóveis novos e usados, com foco em financiamento imobiliário em Brasília e Goiás.
+- [Barra Imobiliária](https://www.imobilmkt.com.br/cases/barra-imobiliaria/) — Imobiliária, Cruzeiro Velho, Brasília (DF). Imobiliária tradicional de Brasília, atuando desde 1985 em compra, venda e locação de imóveis.
+- [Seja Construtora](https://www.imobilmkt.com.br/cases/seja-construtora/) — Construtora e incorporadora, Brasília (DF). Construtora e incorporadora de Brasília, com atuação em construção residencial, comercial e reformas de alto padrão.
+- [Imobiliária Léo Souza](https://www.imobilmkt.com.br/cases/imobiliaria-leo-souza/) — Imobiliária, Distrito Federal e Goiás. Imobiliária com mais de 11 anos de atuação no mercado do DF e Goiás, especializada em realização de sonhos imobiliários.
+- [Studio ACMatos](https://www.imobilmkt.com.br/cases/studio-acmatos/) — Escritório de arquitetura e interiores, Brasília (DF). Escritório de arquitetura e interiores de Brasília, com projetos residenciais e comerciais de autoria própria.
+- [Modulazzi](https://www.imobilmkt.com.br/cases/modulazzi/) — Construtora (pré-moldados), Ceilândia, Brasília (DF). Construtora especializada em construções pré-moldadas em Brasília, com entrega em até 45 dias e projetos personalizados.
+- [Arthion Re•formas](https://www.imobilmkt.com.br/cases/arthion-reformas/) — Construtora e reformas, Brasília (DF). Construtora especializada em execução de obras e projetos de arquitetura residenciais, comerciais e para clínicas e óticas.
+- [Felipe Ramalho](https://www.imobilmkt.com.br/cases/felipe-ramalho/) — Corretor autônomo (alto padrão), Maringá (PR). Corretor de imóveis de alto padrão em Maringá (PR), com formação em Economia (UEM) e MBA (FGV).
+- [Kubi Imóveis](https://www.imobilmkt.com.br/cases/kubi-imoveis/) — Imobiliária, Lago Sul, Brasília (DF). Imobiliária de Brasília com atuação em compra, venda e locação, com abordagem de estratégia patrimonial para o cliente.
+- [Grupo Alves Imóveis](https://www.imobilmkt.com.br/cases/grupo-alves-imoveis/) — Imobiliária, Zona Sul do Recife e Litoral (PE). Imobiliária especializada em imóveis de médio e alto padrão na Zona Sul do Recife e litoral de Pernambuco.
+<!-- CASES:END -->
+
 ## Contato
 
 - WhatsApp / telefone: +55 61 9500-6618
