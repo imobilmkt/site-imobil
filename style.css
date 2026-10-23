@@ -413,12 +413,13 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-sub {
-  font-size: clamp(15px, 2vw, 19px);
-  font-weight: 300;
-  letter-spacing: 0.04em;
-  color: rgba(255,255,255,0.45);
+  font-size: clamp(17px, 2.3vw, 22px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.88);
   margin-bottom: 48px;
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .hero-actions {
@@ -426,6 +427,34 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+}
+
+.hero-proof-item {
+  display: flex;
+  align-items: center;
+}
+
+.hero-proof-divider {
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.2);
+  flex-shrink: 0;
+}
+
+.hero-proof strong {
+  color: var(--gold);
+  font-weight: 800;
+  margin-right: 5px;
 }
 
 .hero-mark {
@@ -901,6 +930,184 @@ img { max-width: 100%; display: block; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
+   PROVA SOCIAL
+═══════════════════════════════════════════════════════════════════ */
+.prova {
+  padding: 120px 0 140px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.prova-sub {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.6);
+  max-width: 620px;
+  margin-top: 20px;
+}
+.prova-sub strong { color: var(--white); font-weight: 600; }
+
+/* ─── Um bloco por cliente, 2 por linha ─── */
+.prova-clients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.prova-client {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.prova-client-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.prova-client-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 42px;
+}
+
+.prova-client-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.prova-client-logo--white {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+
+.prova-client-logo--white img { height: 24px; }
+
+.prova-client-logo--rounded {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.prova-client-logo--rounded img { height: 100%; width: 42px; object-fit: cover; }
+
+.prova-client-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prova-client-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.prova-client-stat {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.prova-client-ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.prova-client-ig:hover { color: var(--gold); }
+
+.prova-client-cta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* ─── Fotos pequenas ─── */
+.prova-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.prova-photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.prova-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(19,16,11,0) 55%, rgba(19,16,11,0.5) 100%);
+  pointer-events: none;
+}
+
+.prova-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.1) brightness(0.95);
+  transition: transform 0.7s var(--ease), filter 0.4s;
+}
+
+.prova-item:hover .prova-photo img {
+  transform: scale(1.04);
+  filter: grayscale(0) brightness(1);
+}
+
+.prova-caption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.prova-caption::before {
+  content: '';
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+@media (max-width: 860px) {
+  .prova { padding: 90px 0 100px; }
+  .prova-clients { grid-template-columns: 1fr; gap: 24px; }
+  .prova-client { padding: 24px; }
+}
+
+@media (max-width: 480px) {
+  .prova-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .prova-caption { font-size: 12px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    SOBRE / QUEM ESTÁ POR TRÁS
 ═══════════════════════════════════════════════════════════════════ */
 .sobre {
@@ -1160,6 +1367,52 @@ img { max-width: 100%; display: block; }
   .faq-question { font-size: 15px; padding: 20px 48px 20px 20px; }
   .faq-question::after { right: 20px; }
   .faq-answer { padding: 0 20px 22px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   DEPOIMENTOS (prints de WhatsApp, dentro da seção PROVA SOCIAL)
+═══════════════════════════════════════════════════════════════════ */
+.depo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.depo-grid--single { grid-template-columns: minmax(0, 260px); }
+
+.depo-shot {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+
+.depo-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+
+.depo-item:hover .depo-shot img { transform: scale(1.03); }
+
+.depo-caption {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.depo-quote {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+@media (max-width: 680px) {
+  .depo-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: 0; margin-right: 0; }
+  .depo-grid--single { max-width: 340px; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
