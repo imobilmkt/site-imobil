@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /obrigado/
 
 Sitemap: https://www.imobilmkt.com.br/sitemap.xml

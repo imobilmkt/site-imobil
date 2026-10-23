@@ -1490,6 +1490,35 @@ img { max-width: 100%; display: block; }
   margin-bottom: 48px;
 }
 
+/* ─── Variante para página standalone (ex.: /obrigado/) ─── */
+.cta-section--standalone {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: calc(var(--nav-h) + 40px);
+}
+
+.obrigado-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 24px;
+  color: var(--dark);
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 8px 32px rgba(221,192,149,0.35);
+}
+
+.obrigado-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    FOOTER
 ═══════════════════════════════════════════════════════════════════ */
