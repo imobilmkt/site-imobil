@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+  <title>Diagnóstico gratuito | IMOBIL</title>
+  <meta name="description" content="Diagnóstico gratuito pra donos de imobiliária e corretores de alta produção." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#13100B" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18193501352"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18193501352');
+  </script>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1493522282909133');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1493522282909133&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --dark:#13100B;
+      --gold:#DDC095;
+      --white:#F4F3F1;
+      --danger:#E07A5F;
+      --font:'Plus Jakarta Sans', sans-serif;
+    }
+    *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+    html,body{ height:100%; }
+    body{
+      background:var(--dark);
+      color:var(--white);
+      font-family:var(--font);
+      min-height:100svh;
+      overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{ color:inherit; }
+
+    .progress-track{ position:fixed; top:0; left:0; right:0; height:4px; background:rgba(255,255,255,.08); z-index:50; }
+    .progress-fill{ height:100%; background:var(--gold); width:0%; transition:width .35s ease; }
+
+    .brand{
+      position:fixed; top:20px; left:20px; z-index:40;
+      display:flex; align-items:center; gap:8px;
+      font-weight:800; font-size:14px; letter-spacing:.02em; opacity:.9;
+    }
+    .brand svg{ display:block; }
+
+    .stage{
+      min-height:100svh;
+      display:flex; align-items:center; justify-content:center;
+      padding:96px 24px 120px;
+    }
+
+    .step{ display:none; width:100%; max-width:560px; flex-direction:column; gap:22px; }
+    .step.active{ display:flex; animation:stepIn .4s ease; }
+    @keyframes stepIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
+
+    .step-title{ font-size:clamp(24px,4vw,34px); font-weight:800; line-height:1.25; letter-spacing:-0.01em; }
+    .step-sub{ font-size:16px; font-weight:400; color:rgba(244,243,241,.65); line-height:1.6; }
+
+    .btn-primary, .btn-advance{
+      display:inline-flex; align-items:center; gap:10px;
+      width:fit-content;
+      background:var(--gold); color:var(--dark);
+      font-family:var(--font); font-weight:700; font-size:15px;
+      padding:16px 28px; border:none; border-radius:8px;
+      cursor:pointer; transition:transform .2s ease, box-shadow .2s ease;
+      box-shadow:0 8px 28px rgba(221,192,149,.25);
+    }
+    .btn-primary:hover, .btn-advance:hover{ transform:translateY(-2px); }
+    .btn-primary:active, .btn-advance:active{ transform:translateY(0); }
+
+    .options{ display:flex; flex-direction:column; gap:12px; margin-top:4px; }
+    .option{
+      display:flex; align-items:center; gap:14px;
+      background:transparent; border:1px solid rgba(221,192,149,.35);
+      border-radius:10px; padding:16px 18px;
+      color:var(--white); font-family:var(--font); font-size:16px; font-weight:500;
+      text-align:left; cursor:pointer; transition:border-color .2s ease, background .2s ease;
+    }
+    .option:hover, .option:focus-visible{ border-color:var(--gold); background:rgba(221,192,149,.06); outline:none; }
+    .option.selected{ background:var(--gold); border-color:var(--gold); color:var(--dark); }
+    .option-letter{
+      flex-shrink:0; width:30px; height:30px; border-radius:50%;
+      border:1px solid currentColor; display:flex; align-items:center; justify-content:center;
+      font-size:13px; font-weight:800;
+    }
+
+    .text-input{
+      background:transparent; border:none; border-bottom:2px solid rgba(221,192,149,.4);
+      color:var(--white); font-family:var(--font); font-size:22px; font-weight:600;
+      padding:10px 2px; outline:none; width:100%;
+    }
+    .text-input:focus{ border-color:var(--gold); }
+    .text-input::placeholder{ color:rgba(244,243,241,.3); font-weight:400; }
+    .hint{ font-size:13px; color:rgba(244,243,241,.4); }
+
+    .disclaimer{ font-size:12px; color:rgba(244,243,241,.45); line-height:1.6; }
+    .disclaimer a{ color:var(--gold); text-decoration:underline; }
+
+    .hp-field{ position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0; }
+
+    .nav-arrows{ position:fixed; right:20px; bottom:24px; display:flex; flex-direction:column; gap:8px; z-index:40; }
+    .nav-arrows button{
+      width:40px; height:40px; border-radius:50%;
+      background:rgba(255,255,255,.06); border:1px solid rgba(221,192,149,.3);
+      color:var(--gold); font-size:16px; cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .2s ease;
+    }
+    .nav-arrows button:hover{ background:rgba(221,192,149,.15); }
+
+    .loading-overlay{
+      position:fixed; inset:0; background:rgba(19,16,11,.85);
+      display:flex; align-items:center; justify-content:center; z-index:100;
+    }
+    .loading-overlay[hidden]{ display:none; }
+    .spinner{ width:36px; height:36px; border:3px solid rgba(221,192,149,.25); border-top-color:var(--gold); border-radius:50%; animation:spin .8s linear infinite; }
+    @keyframes spin{ to{ transform:rotate(360deg); } }
+
+    @media (max-width:480px){
+      .stage{ padding:88px 20px 110px; }
+      .brand{ top:16px; left:16px; font-size:13px; }
+      .step-title{ font-size:22px; }
+      .text-input{ font-size:19px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="brand" aria-hidden="true">
+    <svg viewBox="0 0 36 36" width="26" height="26">
+      <rect x="0"  y="26" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
+      <rect x="13" y="26" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
+      <rect x="26" y="26" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
+      <rect x="13" y="13" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
+      <rect x="26" y="13" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
+      <rect x="26" y="0"  width="10" height="10" fill="#DDC095" rx="1.5"/>
+    </svg>
+    <span>IMOBIL</span>
+  </div>
+
+  <main class="stage">
+
+    <section class="step active" data-step="0">
+      <h1 class="step-title">Descubra se o seu negócio está pronto pra vender mais.</h1>
+      <p class="step-sub">Diagnóstico gratuito pra donos de imobiliária e corretores de alta produção. 6 perguntas, menos de 1 minuto.</p>
+      <button class="btn-primary" id="btnStart" type="button">Começar <span>→</span></button>
+    </section>
+
+    <section class="step" data-step="1" data-type="choice" data-field="cargo">
+      <h2 class="step-title">Hoje você é:</h2>
+      <div class="options">
+        <button class="option" type="button" data-value="dono"><span class="option-letter">A</span><span class="option-text">Dono(a) de imobiliária</span></button>
+        <button class="option" type="button" data-value="corretor"><span class="option-letter">B</span><span class="option-text">Corretor(a) autônomo(a)</span></button>
+      </div>
+    </section>
+
+    <section class="step" data-step="2" data-type="choice" data-field="faturamento">
+      <h2 class="step-title">Qual o faturamento mensal médio?</h2>
+      <div class="options">
+        <button class="option" type="button" data-value="A"><span class="option-letter">A</span><span class="option-text">Até R$ 20 mil</span></button>
+        <button class="option" type="button" data-value="B"><span class="option-letter">B</span><span class="option-text">Entre R$ 20 mil e R$ 50 mil</span></button>
+        <button class="option" type="button" data-value="C"><span class="option-letter">C</span><span class="option-text">Entre R$ 50 mil e R$ 100 mil</span></button>
+        <button class="option" type="button" data-value="D"><span class="option-letter">D</span><span class="option-text">Mais de R$ 100 mil</span></button>
+      </div>
+    </section>
+
+    <section class="step" data-step="3" data-type="text" data-field="instagram">
+      <h2 class="step-title">Qual o @ do seu Instagram?</h2>
+      <input class="text-input" type="text" autocomplete="off" placeholder="@seuusuario" />
+      <button class="btn-advance" type="button">Avançar <span>→</span></button>
+      <p class="hint">Pressione Enter para avançar</p>
+    </section>
+
+    <section class="step" data-step="4" data-type="text" data-field="nome">
+      <h2 class="step-title">Qual seu nome?</h2>
+      <input class="text-input" type="text" autocomplete="name" placeholder="Seu nome" />
+      <button class="btn-advance" type="button">Avançar <span>→</span></button>
+      <p class="hint">Pressione Enter para avançar</p>
+    </section>
+
+    <section class="step" data-step="5" data-type="text" data-field="whatsapp">
+      <h2 class="step-title">Qual seu WhatsApp para entrarmos em contato?</h2>
+      <input class="text-input" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" />
+      <button class="btn-advance" type="button">Avançar <span>→</span></button>
+      <p class="hint">Pressione Enter para avançar</p>
+    </section>
+
+    <section class="step" data-step="6" data-type="text" data-field="email">
+      <h2 class="step-title">Qual seu melhor e-mail?</h2>
+      <input class="text-input" type="email" autocomplete="email" placeholder="seu@email.com" />
+      <input type="text" class="hp-field" name="website" id="hpField" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <button class="btn-advance" type="button">Enviar <span>→</span></button>
+      <p class="disclaimer">Ao enviar, você concorda em ser contatado pela IMOBIL. Seus dados não serão compartilhados. <a href="/privacidade/">Política de privacidade</a>.</p>
+    </section>
+
+  </main>
+
+  <div class="nav-arrows">
+    <button id="navUp" aria-label="Voltar" type="button">↑</button>
+    <button id="navDown" aria-label="Avançar" type="button">↓</button>
+  </div>
+
+  <div class="loading-overlay" id="loadingOverlay" hidden>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+  (function(){
+    'use strict';
+
+    // ═══ Config (único lugar pra trocar a URL do backend) ═══
+    var CONFIG = {
+      ENDPOINT_URL: 'https://script.google.com/macros/s/AKfycbxgmp63lqDrykLdWpjaWeELyrtZLzInAgDjG6FqSyGlNYUiMBCX-I09W6LKJl3qoI89/exec',
+      WHATSAPP_NUMBER: '556195006618'
+    };
+
+    var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
+    var current = 0;
+    var answers = {};
+    var totalQuestions = 6;
+    var progressFill = document.getElementById('progressFill');
+
+    function qs(sel, ctx){ return (ctx || document).querySelector(sel); }
+    function qsa(sel, ctx){ return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+
+    function updateProgress(){
+      var stepIndex = parseInt(steps[current].dataset.step, 10) || 0;
+      var pct = stepIndex === 0 ? 0 : Math.round((stepIndex / totalQuestions) * 100);
+      progressFill.style.width = pct + '%';
+    }
+
+    function firstName(){
+      var n = (answers.nome || '').trim().split(/\s+/)[0];
+      return n || '';
+    }
+
+    function personalize(){
+      var step = steps[current];
+      if (step.dataset.field === 'whatsapp') {
+        qs('.step-title', step).textContent = (firstName() ? firstName() + ', q' : 'Q') + 'ual seu WhatsApp para entrarmos em contato?';
+      }
+      if (step.dataset.field === 'email') {
+        qs('.step-title', step).textContent = (firstName() ? firstName() + ', q' : 'Q') + 'ual seu melhor e-mail?';
+      }
+    }
+
+    function showStep(index){
+      steps[current].classList.remove('active');
+      current = index;
+      steps[current].classList.add('active');
+      personalize();
+      updateProgress();
+      var input = qs('.text-input', steps[current]);
+      if (input) setTimeout(function(){ input.focus(); }, 350);
+    }
+
+    function goNext(){ if (current < steps.length - 1) showStep(current + 1); }
+    function goBack(){ if (current > 0) showStep(current - 1); }
+
+    qs('#btnStart').addEventListener('click', goNext);
+
+    function selectOption(step, opt){
+      qsa('.option', step).forEach(function(o){ o.classList.remove('selected'); });
+      opt.classList.add('selected');
+      answers[step.dataset.field] = opt.dataset.value;
+      setTimeout(goNext, 250);
+    }
+
+    qsa('.step[data-type="choice"]').forEach(function(step){
+      qsa('.option', step).forEach(function(opt){
+        opt.addEventListener('click', function(){ selectOption(step, opt); });
+      });
+    });
+
+    function formatWhatsapp(v){
+      var digits = v.replace(/\D/g, '').slice(0, 11);
+      var out = digits;
+      if (digits.length > 2) out = '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+      if (digits.length > 7) out = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+      return out;
+    }
+
+    function validate(field, value){
+      switch (field) {
+        case 'instagram':
+          return value.trim().length > 0;
+        case 'nome':
+          return value.trim().length > 1;
+        case 'whatsapp':
+          var digits = value.replace(/\D/g, '');
+          return digits.length === 11 && digits.charAt(2) === '9';
+        case 'email':
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+        default:
+          return true;
+      }
+    }
+
+    function normalize(field, value){
+      if (field === 'instagram') {
+        var v = value.trim().replace(/^@+/, '');
+        return v ? '@' + v : '';
+      }
+      return value.trim();
+    }
+
+    function markInvalid(input){
+      input.style.borderColor = '#E07A5F';
+      setTimeout(function(){ input.style.borderColor = ''; }, 900);
+    }
+
+    function tryAdvanceText(step, field, input){
+      var value = input.value;
+      if (!validate(field, value)) { markInvalid(input); return; }
+      answers[field] = normalize(field, value);
+      input.value = answers[field];
+      if (field === 'email') {
+        submitForm();
+      } else {
+        goNext();
+      }
+    }
+
+    qsa('.step[data-type="text"]').forEach(function(step){
+      var field = step.dataset.field;
+      var input = qs('.text-input', step);
+      var btn = qs('.btn-advance', step);
+
+      if (field === 'whatsapp') {
+        input.addEventListener('input', function(){ input.value = formatWhatsapp(input.value); });
+      }
+
+      btn.addEventListener('click', function(){ tryAdvanceText(step, field, input); });
+      input.addEventListener('keydown', function(e){
+        if (e.key === 'Enter') { e.preventDefault(); tryAdvanceText(step, field, input); }
+      });
+    });
+
+    document.addEventListener('keydown', function(e){
+      var step = steps[current];
+      if (step.dataset.type === 'choice') {
+        var letter = e.key.toUpperCase();
+        var opts = qsa('.option', step);
+        var map = { '1':0, '2':1, '3':2, '4':3, 'A':0, 'B':1, 'C':2, 'D':3 };
+        if (map.hasOwnProperty(letter) && opts[map[letter]]) {
+          selectOption(step, opts[map[letter]]);
+          return;
+        }
+      }
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (step.dataset.type === 'text') {
+          tryAdvanceText(step, step.dataset.field, qs('.text-input', step));
+        } else if (current === 0) {
+          goNext();
+        }
+      }
+      if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        goBack();
+      }
+    });
+
+    qs('#navDown').addEventListener('click', function(){
+      var step = steps[current];
+      if (step.dataset.type === 'text') {
+        tryAdvanceText(step, step.dataset.field, qs('.text-input', step));
+      } else if (current === 0) {
+        goNext();
+      }
+    });
+    qs('#navUp').addEventListener('click', goBack);
+
+    // ═══ Utilitários de tracking ═══
+    function uuid(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    function getCookie(name){
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : '';
+    }
+
+    function setCookie(name, value){
+      var d = new Date();
+      d.setTime(d.getTime() + 90 * 24 * 60 * 60 * 1000);
+      document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+    }
+
+    function getParam(name){
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+
+    function ensureFbc(){
+      var fbc = getCookie('_fbc');
+      if (fbc) return fbc;
+      var fbclid = getParam('fbclid');
+      if (!fbclid) return '';
+      var newFbc = 'fb.1.' + Date.now() + '.' + fbclid;
+      setCookie('_fbc', newFbc);
+      return newFbc;
+    }
+
+    function qualifica(cargo, faturamento){
+      if (cargo === 'dono' && ['B', 'C', 'D'].indexOf(faturamento) !== -1) return 'QUALIFICADO';
+      if (cargo === 'corretor' && ['C', 'D'].indexOf(faturamento) !== -1) return 'QUALIFICADO';
+      return 'DESQUALIFICADO';
+    }
+
+    function submitForm(){
+      var overlay = document.getElementById('loadingOverlay');
+      overlay.hidden = false;
+
+      var status = qualifica(answers.cargo, answers.faturamento);
+      var eventId = uuid();
+
+      var payload = {
+        cargo: answers.cargo,
+        faturamento: answers.faturamento,
+        instagram: answers.instagram,
+        nome: answers.nome,
+        whatsapp: answers.whatsapp,
+        email: answers.email,
+        utm_source: getParam('utm_source'),
+        utm_medium: getParam('utm_medium'),
+        utm_campaign: getParam('utm_campaign'),
+        utm_content: getParam('utm_content'),
+        utm_term: getParam('utm_term'),
+        fbclid: getParam('fbclid'),
+        page_url: window.location.href,
+        event_id: eventId,
+        fbp: getCookie('_fbp'),
+        fbc: ensureFbc(),
+        user_agent: navigator.userAgent,
+        hp: (document.getElementById('hpField') || {}).value || '',
+        test_event_code: getParam('test_event_code')
+      };
+
+      try {
+        fetch(CONFIG.ENDPOINT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          body: JSON.stringify(payload)
+        });
+      } catch (err) { /* segue mesmo se falhar */ }
+
+      if (status === 'QUALIFICADO') {
+        if (typeof fbq === 'function') fbq('track', 'Lead', {}, { eventID: eventId });
+      } else {
+        if (typeof fbq === 'function') fbq('trackCustom', 'LeadDesqualificado');
+      }
+
+      setTimeout(function(){
+        window.location.href = status === 'QUALIFICADO' ? '/diagnostico-recebido/' : '/obrigado-conteudo/';
+      }, 150);
+    }
+
+    updateProgress();
+  })();
+  </script>
+</body>
+</html>

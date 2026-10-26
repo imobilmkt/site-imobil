@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /obrigado/
+Disallow: /diagnostico/
+Disallow: /diagnostico-recebido/
+Disallow: /obrigado-conteudo/
 
 Sitemap: https://www.imobilmkt.com.br/sitemap.xml
