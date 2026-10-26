@@ -30,9 +30,15 @@
   <!-- BLOG:START (gerado automaticamente por scripts/rebuild-blog-index.mjs — não editar à mão) -->
   <url>
     <loc>https://www.imobilmkt.com.br/blog/</loc>
-    <lastmod>2026-10-19</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.imobilmkt.com.br/blog/credito-imobiliario-410-bilhoes-marketing-digital/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.imobilmkt.com.br/blog/credito-imobiliario-digital-registro-destrava-financiamento/</loc>
