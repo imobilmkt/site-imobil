@@ -61,6 +61,15 @@
     }
     a{ color:inherit; }
 
+    .page-bg{ position:fixed; inset:0; z-index:0; }
+    .page-bg img{ width:100%; height:100%; object-fit:cover; object-position:center 35%; }
+    .page-overlay{
+      position:fixed; inset:0; z-index:1;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% 28%, rgba(19,16,11,.72) 0%, rgba(19,16,11,.95) 70%),
+        linear-gradient(180deg, rgba(19,16,11,.97) 0%, rgba(19,16,11,.86) 35%, rgba(19,16,11,.97) 100%);
+    }
+
     .progress-track{ position:fixed; top:0; left:0; right:0; height:4px; background:rgba(255,255,255,.08); z-index:50; }
     .progress-fill{ height:100%; background:var(--gold); width:0%; transition:width .35s ease; }
 
@@ -72,6 +81,7 @@
     .brand svg{ display:block; }
 
     .stage{
+      position:relative; z-index:2;
       min-height:100svh;
       display:flex; align-items:center; justify-content:center;
       padding:96px 24px 120px;
@@ -81,8 +91,51 @@
     .step.active{ display:flex; animation:stepIn .4s ease; }
     @keyframes stepIn{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:translateY(0); } }
 
+    .step-eyebrow{
+      display:flex; align-items:center; gap:10px;
+      font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--gold); margin-bottom:-6px;
+    }
+    .eyebrow-dot{ width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; animation:pulseDot 2.5s ease infinite; }
+    @keyframes pulseDot{ 0%,100%{ box-shadow:0 0 0 0 rgba(221,192,149,.6); } 50%{ box-shadow:0 0 0 6px rgba(221,192,149,0); } }
+
+    .step-counter{ font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:rgba(244,243,241,.4); margin-bottom:-8px; }
+
     .step-title{ font-size:clamp(24px,4vw,34px); font-weight:800; line-height:1.25; letter-spacing:-0.01em; }
+    .step-title .accent-word{ color:var(--gold); }
     .step-sub{ font-size:16px; font-weight:400; color:rgba(244,243,241,.65); line-height:1.6; }
+
+    .trust-stats{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:rgba(244,243,241,.6); }
+    .trust-stats strong{ color:var(--gold); font-weight:800; margin-right:4px; }
+    .trust-divider{ width:1px; height:14px; background:rgba(244,243,241,.2); flex-shrink:0; }
+
+    .proof-card{
+      width:100%; display:flex; flex-direction:column; gap:16px;
+      background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08);
+      border-radius:14px; padding:20px;
+    }
+    .proof-photos{ display:flex; gap:8px; }
+    .proof-photo{ flex:1; aspect-ratio:1; border-radius:10px; overflow:hidden; border:1px solid rgba(221,192,149,.25); background:rgba(255,255,255,.03); }
+    .proof-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .proof-stat{ font-size:13px; color:rgba(244,243,241,.55); line-height:1.5; }
+    .proof-stat strong{ color:var(--gold); font-weight:700; }
+
+    .proof-quotes{ display:flex; flex-direction:column; gap:24px; }
+    .proof-quote{ display:flex; flex-direction:column; gap:12px; margin:0; }
+    .proof-quote-shot{
+      width:100%; max-width:260px; border-radius:12px; overflow:hidden;
+      border:1px solid rgba(221,192,149,.25); box-shadow:0 14px 34px rgba(0,0,0,.35);
+    }
+    .proof-quote-shot img{ width:100%; height:auto; display:block; }
+    .proof-quote blockquote{
+      margin:0; border-left:2px solid var(--gold); padding:2px 0 2px 14px;
+      font-size:14px; font-style:italic; color:rgba(244,243,241,.75); line-height:1.6;
+    }
+    .proof-quote cite{ display:block; margin-top:4px; font-style:normal; font-size:12px; font-weight:600; color:var(--gold); }
+
+    .trust-checks{ display:flex; gap:16px; flex-wrap:wrap; list-style:none; font-size:12.5px; color:rgba(244,243,241,.55); }
+    .trust-checks li{ display:flex; align-items:center; gap:6px; }
+    .trust-checks li::before{ content:'✓'; color:var(--gold); font-weight:700; }
 
     .btn-primary, .btn-advance{
       display:inline-flex; align-items:center; gap:10px;
@@ -126,6 +179,19 @@
 
     .hp-field{ position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; opacity:0; }
 
+    .site-footer{
+      position:relative; z-index:2;
+      width:100%; max-width:560px; margin:0 auto;
+      padding:28px 24px 48px;
+      display:flex; flex-direction:column; align-items:center; gap:12px;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .footer-whatsapp{ font-size:13px; font-weight:700; color:var(--gold); }
+    .footer-whatsapp:hover{ text-decoration:underline; }
+    .footer-legal{ font-size:11.5px; color:rgba(244,243,241,.4); line-height:1.6; }
+    .footer-legal a{ color:rgba(244,243,241,.55); text-decoration:underline; }
+
     .nav-arrows{ position:fixed; right:20px; bottom:24px; display:flex; flex-direction:column; gap:8px; z-index:40; }
     .nav-arrows button{
       width:40px; height:40px; border-radius:50%;
@@ -147,12 +213,21 @@
     @media (max-width:480px){
       .stage{ padding:88px 20px 110px; }
       .brand{ top:16px; left:16px; font-size:13px; }
+      .step{ gap:18px; }
       .step-title{ font-size:22px; }
       .text-input{ font-size:19px; }
+      .proof-card{ padding:16px; gap:14px; }
+      .trust-stats{ font-size:12px; flex-direction:column; align-items:flex-start; gap:6px; }
+      .trust-divider{ display:none; }
     }
   </style>
 </head>
 <body>
+
+  <div class="page-bg" aria-hidden="true">
+    <img src="/img/hero-predio.jpg" alt="" width="2200" height="1237" fetchpriority="high">
+  </div>
+  <div class="page-overlay" aria-hidden="true"></div>
 
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
 
@@ -171,12 +246,45 @@
   <main class="stage">
 
     <section class="step active" data-step="0">
-      <h1 class="step-title">Descubra se o seu negócio está pronto pra vender mais.</h1>
-      <p class="step-sub">Diagnóstico gratuito pra donos de imobiliária e corretores de alta produção. 6 perguntas, menos de 1 minuto.</p>
-      <button class="btn-primary" id="btnStart" type="button">Começar <span>→</span></button>
+      <div class="step-eyebrow"><span class="eyebrow-dot"></span>Diagnóstico gratuito</div>
+      <h1 class="step-title">Descubra se o seu negócio está pronto pra <span class="accent-word">vender mais</span>.</h1>
+      <p class="step-sub">Responda 6 perguntas rápidas e receba, gratuitamente, um diagnóstico personalizado de como vender mais imóveis.</p>
+
+      <div class="trust-stats">
+        <span><strong>+30</strong>imobiliárias já venderam mais com a IMOBIL</span>
+        <span class="trust-divider" aria-hidden="true"></span>
+        <span><strong>+R$50 milhões</strong>em VGV movimentado</span>
+      </div>
+
+      <button class="btn-primary" id="btnStart" type="button">Começar diagnóstico gratuito <span>→</span></button>
+      <ul class="trust-checks" aria-label="Garantias">
+        <li>Gratuito</li>
+        <li>Leva 1 minuto</li>
+        <li>Sem compromisso</li>
+      </ul>
+
+      <div class="proof-card">
+        <div class="proof-photos">
+          <div class="proof-photo"><img src="/img/prova-social/leo-souza-entrega-familia.jpg" alt="Família sorrindo recebendo a chave do apartamento próprio, cliente da Leo Souza Imobiliária" loading="lazy" width="300" height="300" style="object-position:center 22%"></div>
+          <div class="proof-photo"><img src="/img/prova-social/leo-souza-entrega-equipe.jpg" alt="Cliente recebendo as chaves do imóvel novo ao lado da equipe da Leo Souza Imobiliária" loading="lazy" width="300" height="300" style="object-position:center 30%"></div>
+          <div class="proof-photo"><img src="/img/prova-social/leo-souza-entrega-casa.jpg" alt="Cliente recebendo a chave de casa própria na entrega de obra" loading="lazy" width="300" height="300" style="object-position:center 25%"></div>
+        </div>
+        <p class="proof-stat"><strong>3 imóveis vendidos em 1 mês</strong> de parceria com a Leo Souza Imobiliária.</p>
+        <div class="proof-quotes">
+          <div class="proof-quote">
+            <div class="proof-quote-shot"><img src="/img/depoimentos/whatsapp-felipe-ramalho.jpg" alt="Print de WhatsApp do corretor Felipe Ramalho pedindo mais clientes como os enviados pela IMOBIL" loading="lazy" width="900" height="866"></div>
+            <blockquote>"Me mandem mais clientes como a de ontem 🔥"<cite>Felipe Ramalho, corretor de imóveis</cite></blockquote>
+          </div>
+          <div class="proof-quote">
+            <div class="proof-quote-shot"><img src="/img/depoimentos/whatsapp-kubi.jpg" alt="Print de WhatsApp da Kubi Imóveis animada com a prévia do site feito pela IMOBIL" loading="lazy" width="900" height="818"></div>
+            <blockquote>"Tá ficando lindão hein? Não vejo a hora 😍"<cite>Kubi Imóveis</cite></blockquote>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="step" data-step="1" data-type="choice" data-field="cargo">
+      <p class="step-counter"></p>
       <h2 class="step-title">Hoje você é:</h2>
       <div class="options">
         <button class="option" type="button" data-value="dono"><span class="option-letter">A</span><span class="option-text">Dono(a) de imobiliária</span></button>
@@ -185,6 +293,7 @@
     </section>
 
     <section class="step" data-step="2" data-type="choice" data-field="faturamento">
+      <p class="step-counter"></p>
       <h2 class="step-title">Qual o faturamento mensal médio?</h2>
       <div class="options">
         <button class="option" type="button" data-value="A"><span class="option-letter">A</span><span class="option-text">Até R$ 20 mil</span></button>
@@ -195,6 +304,7 @@
     </section>
 
     <section class="step" data-step="3" data-type="text" data-field="instagram">
+      <p class="step-counter"></p>
       <h2 class="step-title">Qual o @ do seu Instagram?</h2>
       <input class="text-input" type="text" autocomplete="off" placeholder="@seuusuario" />
       <button class="btn-advance" type="button">Avançar <span>→</span></button>
@@ -202,6 +312,7 @@
     </section>
 
     <section class="step" data-step="4" data-type="text" data-field="nome">
+      <p class="step-counter"></p>
       <h2 class="step-title">Qual seu nome?</h2>
       <input class="text-input" type="text" autocomplete="name" placeholder="Seu nome" />
       <button class="btn-advance" type="button">Avançar <span>→</span></button>
@@ -209,6 +320,7 @@
     </section>
 
     <section class="step" data-step="5" data-type="text" data-field="whatsapp">
+      <p class="step-counter"></p>
       <h2 class="step-title">Qual seu WhatsApp para entrarmos em contato?</h2>
       <input class="text-input" type="tel" inputmode="numeric" autocomplete="tel" placeholder="(00) 00000-0000" />
       <button class="btn-advance" type="button">Avançar <span>→</span></button>
@@ -216,6 +328,7 @@
     </section>
 
     <section class="step" data-step="6" data-type="text" data-field="email">
+      <p class="step-counter"></p>
       <h2 class="step-title">Qual seu melhor e-mail?</h2>
       <input class="text-input" type="email" autocomplete="email" placeholder="seu@email.com" />
       <input type="text" class="hp-field" name="website" id="hpField" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -224,6 +337,12 @@
     </section>
 
   </main>
+
+  <footer class="site-footer">
+    <a class="footer-whatsapp" href="https://wa.me/556195006618?text=Ol%C3%A1!%20Quero%20agendar%20uma%20reuni%C3%A3o%20para%20descobrir%20como%20atrair%20mais%20clientes%20com%20marketing%20digital%20imobili%C3%A1rio." target="_blank" rel="noopener">Prefere falar direto? Fale no WhatsApp <span>→</span></a>
+    <p class="footer-legal">© 2026 IMOBIL Marketing Imobiliário — CNPJ 67.697.233/0001-66.<br>Edifício Office 300, Sala 105, Sudoeste/Octogonal, Brasília – DF</p>
+    <p class="footer-legal"><a href="/privacidade/">Política de privacidade</a></p>
+  </footer>
 
   <div class="nav-arrows">
     <button id="navUp" aria-label="Voltar" type="button">↑</button>
@@ -257,6 +376,8 @@
       var stepIndex = parseInt(steps[current].dataset.step, 10) || 0;
       var pct = stepIndex === 0 ? 0 : Math.round((stepIndex / totalQuestions) * 100);
       progressFill.style.width = pct + '%';
+      var counter = qs('.step-counter', steps[current]);
+      if (counter) counter.textContent = 'Pergunta ' + stepIndex + ' de ' + totalQuestions;
     }
 
     function firstName(){
