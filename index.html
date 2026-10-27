@@ -237,38 +237,74 @@
     <div class="hero-overlay" aria-hidden="true"></div>
     <canvas class="hero-canvas" id="heroCanvas"></canvas>
     <div class="hero-content">
-      <div class="hero-eyebrow reveal">
-        <span class="eyebrow-dot"></span>
-        Marketing imobiliário
+      <div class="hero-text">
+        <div class="hero-eyebrow reveal">
+          <span class="eyebrow-dot"></span>
+          Marketing imobiliário
+        </div>
+        <h1 class="hero-headline reveal reveal-delay-1">
+          Transformamos sua<br>
+          <span class="accent-word">presença digital</span> em vendas.
+        </h1>
+        <p class="hero-sub reveal reveal-delay-2">
+          Todo mundo pesquisa na internet antes de comprar um imóvel. Se você não aparece, não vende. É isso que a IMOBIL muda pra você.
+        </p>
+        <div class="hero-actions reveal reveal-delay-3">
+          <a href="https://wa.me/556195006618?text=Ol%C3%A1!%20Quero%20agendar%20uma%20reuni%C3%A3o%20para%20descobrir%20como%20atrair%20mais%20clientes%20com%20marketing%20digital%20imobili%C3%A1rio." target="_blank" rel="noopener" class="btn btn-ghost" onclick="gtag_report_conversion()">
+            Falar no WhatsApp <span class="btn-arrow">→</span>
+          </a>
+          <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+        </div>
+        <div class="hero-proof reveal reveal-delay-3">
+          <span class="hero-proof-item"><strong>+30</strong> imobiliárias já venderam mais com a IMOBIL</span>
+          <span class="hero-proof-divider" aria-hidden="true"></span>
+          <span class="hero-proof-item"><strong>+R$50 milhões</strong> em VGV movimentado</span>
+        </div>
       </div>
-      <h1 class="hero-headline reveal reveal-delay-1">
-        Transformamos sua<br>
-        <span class="accent-word">presença digital</span> em vendas.
-      </h1>
-      <p class="hero-sub reveal reveal-delay-2">
-        Todo mundo pesquisa na internet antes de comprar um imóvel. Se você não aparece, não vende. É isso que a IMOBIL muda pra você.
-      </p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="https://wa.me/556195006618?text=Ol%C3%A1!%20Quero%20agendar%20uma%20reuni%C3%A3o%20para%20descobrir%20como%20atrair%20mais%20clientes%20com%20marketing%20digital%20imobili%C3%A1rio." target="_blank" rel="noopener" class="btn btn-primary" onclick="gtag_report_conversion()">
-          Falar com um especialista <span class="btn-arrow">→</span>
-        </a>
-        <a href="#servicos" class="btn btn-ghost">Ver serviços</a>
+
+      <div class="hero-form-card reveal reveal-delay-2">
+        <h3>Fale com a gente</h3>
+        <p>Preencha o formulário e um especialista da IMOBIL entra em contato.</p>
+        <form id="heroLeadForm">
+          <div class="hf-field">
+            <label for="hfNome">Nome</label>
+            <input type="text" id="hfNome" placeholder="Seu nome" autocomplete="name" required>
+          </div>
+          <div class="hf-field">
+            <label for="hfEmail">E-mail</label>
+            <input type="email" id="hfEmail" placeholder="Seu melhor e-mail" autocomplete="email" required>
+          </div>
+          <div class="hf-field">
+            <label for="hfWhatsapp">WhatsApp</label>
+            <input type="tel" id="hfWhatsapp" inputmode="numeric" placeholder="(00) 00000-0000" autocomplete="tel" required>
+            <span class="hf-error" id="hfWhatsappError"></span>
+          </div>
+          <div class="hf-field">
+            <label for="hfCargo">Você é</label>
+            <select id="hfCargo" required>
+              <option value="" selected disabled>Selecionar</option>
+              <option value="dono">Dono(a) de imobiliária</option>
+              <option value="corretor">Corretor(a) autônomo(a)</option>
+            </select>
+          </div>
+          <div class="hf-field">
+            <label for="hfFaturamento">Faturamento mensal médio</label>
+            <select id="hfFaturamento" required>
+              <option value="" selected disabled>Selecionar</option>
+              <option value="A">Até R$ 20 mil</option>
+              <option value="B">Entre R$ 20 mil e R$ 50 mil</option>
+              <option value="C">Entre R$ 50 mil e R$ 100 mil</option>
+              <option value="D">Mais de R$ 100 mil</option>
+            </select>
+          </div>
+          <input type="text" id="hfHp" name="website" class="hf-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button type="submit" class="btn btn-primary">Quero vender mais <span class="btn-arrow">→</span></button>
+        </form>
+        <div class="hf-success" id="hfSuccess">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span>Recebemos seus dados! Nossa equipe entra em contato pelo WhatsApp em breve.</span>
+        </div>
       </div>
-      <div class="hero-proof reveal reveal-delay-3">
-        <span class="hero-proof-item"><strong>+30</strong> imobiliárias já venderam mais com a IMOBIL</span>
-        <span class="hero-proof-divider" aria-hidden="true"></span>
-        <span class="hero-proof-item"><strong>+R$50 milhões</strong> em VGV movimentado</span>
-      </div>
-    </div>
-    <div class="hero-mark reveal reveal-delay-2" aria-hidden="true">
-      <svg viewBox="0 0 110 110" width="110" height="110">
-        <rect x="0"  y="78" width="30" height="30" fill="#FFFFFF" rx="3" opacity="0.12"/>
-        <rect x="40" y="78" width="30" height="30" fill="#FFFFFF" rx="3" opacity="0.12"/>
-        <rect x="80" y="78" width="30" height="30" fill="#FFFFFF" rx="3" opacity="0.12"/>
-        <rect x="40" y="40" width="30" height="30" fill="#FFFFFF" rx="3" opacity="0.12"/>
-        <rect x="80" y="40" width="30" height="30" fill="#FFFFFF" rx="3" opacity="0.12"/>
-        <rect x="80" y="0"  width="30" height="30" fill="#DDC095" rx="3" opacity="0.25"/>
-      </svg>
     </div>
     <div class="hero-scroll-hint" aria-hidden="true">
       <span class="scroll-line"></span>
@@ -1025,6 +1061,133 @@
       }
       return true;
     }
+  </script>
+  <script>
+  (function(){
+    'use strict';
+
+    var FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxgmp63lqDrykLdWpjaWeELyrtZLzInAgDjG6FqSyGlNYUiMBCX-I09W6LKJl3qoI89/exec';
+
+    var form = document.getElementById('heroLeadForm');
+    if (!form) return;
+
+    var success = document.getElementById('hfSuccess');
+    var nome = document.getElementById('hfNome');
+    var email = document.getElementById('hfEmail');
+    var whatsapp = document.getElementById('hfWhatsapp');
+    var whatsappError = document.getElementById('hfWhatsappError');
+    var cargo = document.getElementById('hfCargo');
+    var faturamento = document.getElementById('hfFaturamento');
+    var hp = document.getElementById('hfHp');
+
+    function formatWhatsapp(v){
+      var digits = v.replace(/\D/g, '').slice(0, 11);
+      var out = digits;
+      if (digits.length > 2) out = '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+      if (digits.length > 7) out = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+      return out;
+    }
+    whatsapp.addEventListener('input', function(){ whatsapp.value = formatWhatsapp(whatsapp.value); });
+
+    function isValidWhatsapp(v){
+      var digits = v.replace(/\D/g, '');
+      return digits.length === 11 && digits.charAt(2) === '9';
+    }
+
+    function uuid(){
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c){
+        var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    function getCookie(name){
+      var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : '';
+    }
+    function setCookie(name, value){
+      var d = new Date();
+      d.setTime(d.getTime() + 90 * 24 * 60 * 60 * 1000);
+      document.cookie = name + '=' + value + ';expires=' + d.toUTCString() + ';path=/';
+    }
+    function getParam(name){
+      return new URLSearchParams(window.location.search).get(name) || '';
+    }
+    function ensureFbc(){
+      var fbc = getCookie('_fbc');
+      if (fbc) return fbc;
+      var fbclid = getParam('fbclid');
+      if (!fbclid) return '';
+      var newFbc = 'fb.1.' + Date.now() + '.' + fbclid;
+      setCookie('_fbc', newFbc);
+      return newFbc;
+    }
+
+    function qualifica(cargoVal, faturamentoVal){
+      if (cargoVal === 'dono' && ['B', 'C', 'D'].indexOf(faturamentoVal) !== -1) return 'QUALIFICADO';
+      if (cargoVal === 'corretor' && ['C', 'D'].indexOf(faturamentoVal) !== -1) return 'QUALIFICADO';
+      return 'DESQUALIFICADO';
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      if (!isValidWhatsapp(whatsapp.value)) {
+        whatsappError.textContent = 'WhatsApp inválido, confira o número.';
+        whatsapp.style.borderColor = '#E07A5F';
+        return;
+      }
+      whatsappError.textContent = '';
+      whatsapp.style.borderColor = '';
+
+      var status = qualifica(cargo.value, faturamento.value);
+      var eventId = uuid();
+
+      var payload = {
+        origem: 'home-hero',
+        cargo: cargo.value,
+        faturamento: faturamento.value,
+        instagram: '',
+        nome: nome.value.trim(),
+        whatsapp: whatsapp.value,
+        email: email.value.trim(),
+        utm_source: getParam('utm_source'),
+        utm_medium: getParam('utm_medium'),
+        utm_campaign: getParam('utm_campaign'),
+        utm_content: getParam('utm_content'),
+        utm_term: getParam('utm_term'),
+        fbclid: getParam('fbclid'),
+        page_url: window.location.href,
+        event_id: eventId,
+        fbp: getCookie('_fbp'),
+        fbc: ensureFbc(),
+        user_agent: navigator.userAgent,
+        hp: hp.value || '',
+        test_event_code: getParam('test_event_code')
+      };
+
+      try {
+        fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          keepalive: true,
+          body: JSON.stringify(payload)
+        });
+      } catch (err) { /* segue mesmo se falhar */ }
+
+      if (typeof gtag_report_conversion === 'function') gtag_report_conversion();
+
+      if (status === 'QUALIFICADO') {
+        if (typeof fbq === 'function') fbq('track', 'Lead', {}, { eventID: eventId });
+      } else {
+        if (typeof fbq === 'function') fbq('trackCustom', 'LeadDesqualificado');
+      }
+
+      form.style.display = 'none';
+      success.classList.add('show');
+    });
+  })();
   </script>
 </body>
 </html>
