@@ -1083,6 +1083,18 @@
       }
       return true;
     }
+
+    // Conversão dedicada do Google Ads para o envio do formulário da hero
+    // (ação "Lead - Formulário Hero (Site)"), separada da conversão de
+    // clique no WhatsApp para permitir otimizar campanhas por lead real.
+    function gtag_report_conversion_lead_form() {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-18193501352/NpOuCK6Z36wdEKiZq-ND',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+      return true;
+    }
   </script>
   <script>
   (function(){
@@ -1198,7 +1210,7 @@
         });
       } catch (err) { /* segue mesmo se falhar */ }
 
-      if (typeof gtag_report_conversion === 'function') gtag_report_conversion();
+      if (typeof gtag_report_conversion_lead_form === 'function') gtag_report_conversion_lead_form();
 
       if (status === 'QUALIFICADO') {
         if (typeof fbq === 'function') fbq('track', 'Lead', {}, { eventID: eventId });
