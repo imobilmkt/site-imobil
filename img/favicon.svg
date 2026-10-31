@@ -1,9 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
-  <rect x="0" y="0" width="40" height="40" rx="8" fill="#13100B"/>
-  <rect x="2"  y="28" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
-  <rect x="15" y="28" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
-  <rect x="28" y="28" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
-  <rect x="15" y="15" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
-  <rect x="28" y="15" width="10" height="10" fill="#FFFFFF" rx="1.5"/>
-  <rect x="28" y="2"  width="10" height="10" fill="#DDC095" rx="1.5"/>
+  <style>
+    .ink { fill: #13100B; }
+    .accent { fill: #B08A52; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #FFFFFF; }
+      .accent { fill: #E4C998; }
+    }
+  </style>
+  <g transform="translate(20 20) scale(0.68) translate(-16.2 -16.2)">
+    <rect x="23.4" y="0"    width="9" height="9" rx="1.05" class="accent"/>
+    <rect x="11.7" y="11.7" width="9" height="9" rx="1.05" class="ink"/>
+    <rect x="23.4" y="11.7" width="9" height="9" rx="1.05" class="ink"/>
+    <rect x="0"    y="23.4" width="9" height="9" rx="1.05" class="ink"/>
+    <rect x="11.7" y="23.4" width="9" height="9" rx="1.05" class="ink"/>
+    <rect x="23.4" y="23.4" width="9" height="9" rx="1.05" class="ink"/>
+  </g>
 </svg>
