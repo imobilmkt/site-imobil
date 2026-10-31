@@ -34,7 +34,8 @@ html {
 }
 
 /* Compensa a navbar fixa em links diretos por âncora (ex.: /#clientes) */
-section[id] {
+section[id],
+#formulario {
   scroll-margin-top: var(--nav-h);
 }
 
@@ -571,6 +572,13 @@ img { max-width: 100%; display: block; }
 
 .hf-error { display: block; font-size: 11.5px; color: #E07A5F; margin-top: 6px; min-height: 1px; }
 .hf-hp { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.hf-note {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  margin-top: 10px;
+}
 
 .hf-success {
   display: none;
