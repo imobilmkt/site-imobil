@@ -628,16 +628,36 @@ img { max-width: 100%; display: block; }
 .confia-rating-text { color: rgba(255,255,255,0.7); }
 .confia-rating-sep { margin: 0 2px; opacity: 0.5; }
 
-.confia-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-  gap: 40px 24px;
+.confia-marquee {
   margin-top: 64px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.confia-track {
+  display: flex;
+  width: max-content;
+  animation: confia-scroll 36s linear infinite;
+}
+
+.confia-marquee:hover .confia-track { animation-play-state: paused; }
+
+@keyframes confia-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.confia-group {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding-right: 64px;
 }
 
 .confia-item {
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
   gap: 14px;
@@ -687,6 +707,11 @@ img { max-width: 100%; display: block; }
 }
 
 .confia-item:hover .confia-handle { color: var(--gold); }
+
+@media (prefers-reduced-motion: reduce) {
+  .confia-track { animation: none; }
+  .confia-marquee { overflow-x: auto; }
+}
 
 /* ═══════════════════════════════════════════════════════════════════
    PROBLEMA / SOLUÇÃO
@@ -1772,7 +1797,6 @@ img { max-width: 100%; display: block; }
   .diff-card.diff-large { grid-column: 1 / -1; }
   .cta-bg-mark { opacity: 0.05; }
   .sobre-grid { gap: 48px; }
-  .confia-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -1780,6 +1804,9 @@ img { max-width: 100%; display: block; }
 ═══════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   :root { --nav-h: 66px; }
+
+  .confia-photo { height: 72px; }
+  .confia-group { gap: 40px; padding-right: 40px; }
 
   body { cursor: auto !important; }
   * { cursor: auto !important; }

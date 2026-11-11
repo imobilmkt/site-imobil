@@ -526,61 +526,118 @@
           <span class="confia-rating-text">5,0 no Google <span class="confia-rating-sep">·</span> 23 avaliações</span>
         </a>
       </div>
-      <div class="confia-grid">
-        <!-- Cada item abaixo é um cliente, linkado para o case completo em /cases/. Para adicionar um novo:
+      <div class="confia-marquee reveal">
+        <!-- Faixa rolante de clientes. O conteúdo é duplicado (grupo 2 = aria-hidden)
+             para criar o loop infinito sem emenda. Para adicionar um novo cliente:
              1) coloque a logo (PNG) em img/clientes/
-             2) duplique um bloco <a class="confia-item">...</a> abaixo
+             2) duplique um bloco <a class="confia-item">...</a> nos DOIS grupos abaixo
              3) troque o src pela logo e o href pelo slug do case em /cases/ -->
-        <a class="confia-item reveal" href="/cases/fabio-oliveira/">
-          <div class="confia-photo">
-            <img src="/img/clientes/Logo%20Fabio%20Oliveira.PNG" alt="Fabio Oliveira" loading="lazy" width="200" height="166">
+        <div class="confia-track">
+          <div class="confia-group">
+            <a class="confia-item" href="/cases/fabio-oliveira/">
+              <div class="confia-photo">
+                <img src="/img/clientes/Logo%20Fabio%20Oliveira.PNG" alt="Fabio Oliveira" loading="lazy" width="200" height="166">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/barra-imobiliaria/">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20barra%20imobiliaria.png" alt="Barra Imobiliária" loading="lazy" width="200" height="133">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/seja-construtora/">
+              <div class="confia-photo confia-photo--light">
+                <img src="/img/clientes/Logo%20seja.png" alt="Seja Construtora" loading="lazy" width="200" height="62">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/imobiliaria-leo-souza/">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/Leo%20Souza%20Imobili%C3%A1ria.png" alt="Leo Souza Imobiliária" loading="lazy" width="200" height="97">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/studio-acmatos/">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/studio%20ac%20matos.jpg" alt="AC Matos Studio" loading="lazy" width="200" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/modulazzi/">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20modulazzi.webp" alt="Modulazzi" loading="lazy" width="152" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/arthion-reformas/">
+              <div class="confia-photo">
+                <img src="/img/clientes/%5BArthion%5D%20logo%20RGB-52.png" alt="Arthion Arte e Formas" loading="lazy" width="200" height="93">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/felipe-ramalho/">
+              <div class="confia-photo confia-photo--light">
+                <img src="/img/clientes/logo%20felipe%20ramalho.svg" alt="Felipe Ramalho Corretor" loading="lazy" width="200" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/kubi-imoveis/">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20kubi%20imoveis.png" alt="Kubi Imóveis" loading="lazy" width="200" height="60">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/grupo-alves-imoveis/">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/logo%20grupo%20alves%20imoveis.jpeg" alt="Grupo Alves Imóveis" loading="lazy" width="200" height="193">
+              </div>
+            </a>
           </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-1" href="/cases/barra-imobiliaria/">
-          <div class="confia-photo">
-            <img src="/img/clientes/logo%20barra%20imobiliaria.png" alt="Barra Imobiliária" loading="lazy" width="200" height="133">
+          <div class="confia-group" aria-hidden="true">
+            <a class="confia-item" href="/cases/fabio-oliveira/" tabindex="-1">
+              <div class="confia-photo">
+                <img src="/img/clientes/Logo%20Fabio%20Oliveira.PNG" alt="" loading="lazy" width="200" height="166">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/barra-imobiliaria/" tabindex="-1">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20barra%20imobiliaria.png" alt="" loading="lazy" width="200" height="133">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/seja-construtora/" tabindex="-1">
+              <div class="confia-photo confia-photo--light">
+                <img src="/img/clientes/Logo%20seja.png" alt="" loading="lazy" width="200" height="62">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/imobiliaria-leo-souza/" tabindex="-1">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/Leo%20Souza%20Imobili%C3%A1ria.png" alt="" loading="lazy" width="200" height="97">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/studio-acmatos/" tabindex="-1">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/studio%20ac%20matos.jpg" alt="" loading="lazy" width="200" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/modulazzi/" tabindex="-1">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20modulazzi.webp" alt="" loading="lazy" width="152" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/arthion-reformas/" tabindex="-1">
+              <div class="confia-photo">
+                <img src="/img/clientes/%5BArthion%5D%20logo%20RGB-52.png" alt="" loading="lazy" width="200" height="93">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/felipe-ramalho/" tabindex="-1">
+              <div class="confia-photo confia-photo--light">
+                <img src="/img/clientes/logo%20felipe%20ramalho.svg" alt="" loading="lazy" width="200" height="200">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/kubi-imoveis/" tabindex="-1">
+              <div class="confia-photo">
+                <img src="/img/clientes/logo%20kubi%20imoveis.png" alt="" loading="lazy" width="200" height="60">
+              </div>
+            </a>
+            <a class="confia-item" href="/cases/grupo-alves-imoveis/" tabindex="-1">
+              <div class="confia-photo confia-photo--rounded">
+                <img src="/img/clientes/logo%20grupo%20alves%20imoveis.jpeg" alt="" loading="lazy" width="200" height="193">
+              </div>
+            </a>
           </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-2" href="/cases/seja-construtora/">
-          <div class="confia-photo confia-photo--light">
-            <img src="/img/clientes/Logo%20seja.png" alt="Seja Construtora" loading="lazy" width="200" height="62">
-          </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-3" href="/cases/imobiliaria-leo-souza/">
-          <div class="confia-photo confia-photo--rounded">
-            <img src="/img/clientes/Leo%20Souza%20Imobili%C3%A1ria.png" alt="Leo Souza Imobiliária" loading="lazy" width="200" height="97">
-          </div>
-        </a>
-        <a class="confia-item reveal" href="/cases/studio-acmatos/">
-          <div class="confia-photo confia-photo--rounded">
-            <img src="/img/clientes/studio%20ac%20matos.jpg" alt="AC Matos Studio" loading="lazy" width="200" height="200">
-          </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-1" href="/cases/modulazzi/">
-          <div class="confia-photo">
-            <img src="/img/clientes/logo%20modulazzi.webp" alt="Modulazzi" loading="lazy" width="152" height="200">
-          </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-2" href="/cases/arthion-reformas/">
-          <div class="confia-photo">
-            <img src="/img/clientes/%5BArthion%5D%20logo%20RGB-52.png" alt="Arthion Arte e Formas" loading="lazy" width="200" height="93">
-          </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-3" href="/cases/felipe-ramalho/">
-          <div class="confia-photo confia-photo--light">
-            <img src="/img/clientes/logo%20felipe%20ramalho.svg" alt="Felipe Ramalho Corretor" loading="lazy" width="200" height="200">
-          </div>
-        </a>
-        <a class="confia-item reveal" href="/cases/kubi-imoveis/">
-          <div class="confia-photo">
-            <img src="/img/clientes/logo%20kubi%20imoveis.png" alt="Kubi Imóveis" loading="lazy" width="200" height="60">
-          </div>
-        </a>
-        <a class="confia-item reveal reveal-delay-1" href="/cases/grupo-alves-imoveis/">
-          <div class="confia-photo confia-photo--rounded">
-            <img src="/img/clientes/logo%20grupo%20alves%20imoveis.jpeg" alt="Grupo Alves Imóveis" loading="lazy" width="200" height="193">
-          </div>
-        </a>
+        </div>
       </div>
     </div>
   </section>
